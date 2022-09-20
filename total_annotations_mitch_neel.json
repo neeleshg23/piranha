@@ -1,0 +1,2970 @@
+{
+    "143377340_1": [
+        {
+            "start": 269,
+            "end": 412,
+            "token_start": 54,
+            "token_end": 79,
+            "label": "sentence_tone_urgent"
+        },
+        {
+            "start": 416,
+            "end": 501,
+            "token_start": 81,
+            "token_end": 93,
+            "label": "sentence_tone_polite"
+        },
+        {
+            "start": 508,
+            "end": 547,
+            "token_start": 96,
+            "token_end": 102,
+            "label": "signature"
+        },
+        {
+            "start": 508,
+            "end": 515,
+            "token_start": 96,
+            "token_end": 96,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 520,
+            "end": 547,
+            "token_start": 99,
+            "token_end": 102,
+            "label": "signature_jobtitle"
+        }
+    ],
+    "143377340_2": [
+        {
+            "start": 87,
+            "end": 104,
+            "token_start": 18,
+            "token_end": 20,
+            "label": "words_sender_organization"
+        },
+        {
+            "start": 416,
+            "end": 501,
+            "token_start": 81,
+            "token_end": 93,
+            "label": "sentence_intent_attachment"
+        },
+        {
+            "start": 508,
+            "end": 547,
+            "token_start": 96,
+            "token_end": 102,
+            "label": "signature"
+        },
+        {
+            "start": 508,
+            "end": 515,
+            "token_start": 96,
+            "token_end": 96,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 520,
+            "end": 547,
+            "token_start": 99,
+            "token_end": 102,
+            "label": "signature_jobtitle"
+        }
+    ],
+    "157574214_1": [
+        {
+            "start": 0,
+            "end": 617,
+            "token_start": 0,
+            "token_end": 105,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 442,
+            "end": 572,
+            "token_start": 72,
+            "token_end": 96,
+            "label": "sentence_tone_urgent"
+        },
+        {
+            "start": 575,
+            "end": 617,
+            "token_start": 99,
+            "token_end": 105,
+            "label": "signature"
+        },
+        {
+            "start": 587,
+            "end": 617,
+            "token_start": 103,
+            "token_end": 105,
+            "label": "signature_jobtitle"
+        }
+    ],
+    "157574214_2": [
+        {
+            "start": 0,
+            "end": 617,
+            "token_start": 0,
+            "token_end": 105,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 192,
+            "end": 337,
+            "token_start": 39,
+            "token_end": 51,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 192,
+            "end": 337,
+            "token_start": 39,
+            "token_end": 51,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 442,
+            "end": 572,
+            "token_start": 72,
+            "token_end": 96,
+            "label": "sentence_tone_urgent"
+        },
+        {
+            "start": 575,
+            "end": 617,
+            "token_start": 99,
+            "token_end": 105,
+            "label": "signature"
+        },
+        {
+            "start": 575,
+            "end": 584,
+            "token_start": 99,
+            "token_end": 100,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 587,
+            "end": 617,
+            "token_start": 103,
+            "token_end": 105,
+            "label": "words_sender_organization"
+        }
+    ],
+    "-1891939011_1": [
+        {
+            "start": 69,
+            "end": 101,
+            "token_start": 23,
+            "token_end": 30,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 69,
+            "end": 101,
+            "token_start": 23,
+            "token_end": 30,
+            "label": "sentence_tone_polite"
+        },
+        {
+            "start": 104,
+            "end": 152,
+            "token_start": 32,
+            "token_end": 42,
+            "label": "signature"
+        },
+        {
+            "start": 104,
+            "end": 110,
+            "token_start": 32,
+            "token_end": 32,
+            "label": "signature_signoff"
+        }
+    ],
+    "-1891939011_2": [
+        {
+            "start": 11,
+            "end": 67,
+            "token_start": 4,
+            "token_end": 21,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 69,
+            "end": 101,
+            "token_start": 23,
+            "token_end": 30,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 104,
+            "end": 116,
+            "token_start": 32,
+            "token_end": 35,
+            "label": "signature"
+        },
+        {
+            "start": 104,
+            "end": 110,
+            "token_start": 32,
+            "token_end": 32,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 113,
+            "end": 116,
+            "token_start": 35,
+            "token_end": 35,
+            "label": "signature_fullname"
+        }
+    ],
+    "-249894096_1": [
+        {
+            "start": 162,
+            "end": 185,
+            "token_start": 37,
+            "token_end": 44,
+            "label": "sentence_intent_phonecall"
+        }
+    ],
+    "-249894096_2": [
+        {
+            "start": 0,
+            "end": 185,
+            "token_start": 0,
+            "token_end": 44,
+            "label": "message_contact_person_asking"
+        }
+    ],
+    "1476864770_1": [
+        {
+            "start": 0,
+            "end": 519,
+            "token_start": 0,
+            "token_end": 98,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 172,
+            "end": 347,
+            "token_start": 35,
+            "token_end": 63,
+            "label": "sentence_intent_products"
+        },
+        {
+            "start": 492,
+            "end": 519,
+            "token_start": 94,
+            "token_end": 98,
+            "label": "signature"
+        },
+        {
+            "start": 492,
+            "end": 498,
+            "token_start": 94,
+            "token_end": 94,
+            "label": "signature_signoff"
+        }
+    ],
+    "1476864770_2": [
+        {
+            "start": 0,
+            "end": 519,
+            "token_start": 0,
+            "token_end": 98,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 8,
+            "end": 126,
+            "token_start": 3,
+            "token_end": 26,
+            "label": "sentence_intent_intro"
+        },
+        {
+            "start": 492,
+            "end": 519,
+            "token_start": 94,
+            "token_end": 98,
+            "label": "signature"
+        },
+        {
+            "start": 492,
+            "end": 498,
+            "token_start": 94,
+            "token_end": 94,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 500,
+            "end": 519,
+            "token_start": 96,
+            "token_end": 98,
+            "label": "words_sender_organization"
+        }
+    ],
+    "-336274725_1": [
+        {
+            "start": 11,
+            "end": 38,
+            "token_start": 4,
+            "token_end": 10,
+            "label": "sentence_tone_polite"
+        },
+        {
+            "start": 143,
+            "end": 191,
+            "token_start": 35,
+            "token_end": 46,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 311,
+            "end": 469,
+            "token_start": 70,
+            "token_end": 94,
+            "label": "sentence_intent_products"
+        },
+        {
+            "start": 614,
+            "end": 684,
+            "token_start": 125,
+            "token_end": 140,
+            "label": "signature"
+        },
+        {
+            "start": 620,
+            "end": 633,
+            "token_start": 127,
+            "token_end": 128,
+            "label": "signature_fullname"
+        },
+        {
+            "start": 634,
+            "end": 657,
+            "token_start": 129,
+            "token_end": 131,
+            "label": "signature_jobtitle"
+        },
+        {
+            "start": 658,
+            "end": 665,
+            "token_start": 132,
+            "token_end": 132,
+            "label": "signature_org"
+        },
+        {
+            "start": 669,
+            "end": 684,
+            "token_start": 134,
+            "token_end": 140,
+            "label": "signature_phone"
+        }
+    ],
+    "-336274725_2": [
+        {
+            "start": 39,
+            "end": 191,
+            "token_start": 11,
+            "token_end": 46,
+            "label": "sentence_intent_scheduling"
+        },
+        {
+            "start": 313,
+            "end": 470,
+            "token_start": 71,
+            "token_end": 95,
+            "label": "sentence_intent_service"
+        },
+        {
+            "start": 614,
+            "end": 684,
+            "token_start": 125,
+            "token_end": 140,
+            "label": "signature"
+        },
+        {
+            "start": 614,
+            "end": 618,
+            "token_start": 125,
+            "token_end": 125,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 620,
+            "end": 633,
+            "token_start": 127,
+            "token_end": 128,
+            "label": "signature_fullname"
+        },
+        {
+            "start": 634,
+            "end": 657,
+            "token_start": 129,
+            "token_end": 131,
+            "label": "signature_jobtitle"
+        },
+        {
+            "start": 658,
+            "end": 668,
+            "token_start": 132,
+            "token_end": 133,
+            "label": "signature_org"
+        },
+        {
+            "start": 669,
+            "end": 684,
+            "token_start": 134,
+            "token_end": 140,
+            "label": "signature_phone"
+        }
+    ],
+    "-1365172211_1": [
+        {
+            "start": 17,
+            "end": 54,
+            "token_start": 5,
+            "token_end": 12,
+            "label": "sentence_tone_polite"
+        },
+        {
+            "start": 56,
+            "end": 98,
+            "token_start": 14,
+            "token_end": 19,
+            "label": "sentence_tone_polite"
+        },
+        {
+            "start": 100,
+            "end": 199,
+            "token_start": 21,
+            "token_end": 39,
+            "label": "sentence_intent_money"
+        },
+        {
+            "start": 246,
+            "end": 288,
+            "token_start": 52,
+            "token_end": 58,
+            "label": "signature"
+        },
+        {
+            "start": 246,
+            "end": 258,
+            "token_start": 52,
+            "token_end": 53,
+            "label": "signature_signoff"
+        }
+    ],
+    "-1365172211_2": [
+        {
+            "start": 17,
+            "end": 98,
+            "token_start": 5,
+            "token_end": 19,
+            "label": "sentence_tone_polite"
+        },
+        {
+            "start": 246,
+            "end": 288,
+            "token_start": 52,
+            "token_end": 58,
+            "label": "signature"
+        },
+        {
+            "start": 246,
+            "end": 258,
+            "token_start": 52,
+            "token_end": 53,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 261,
+            "end": 288,
+            "token_start": 56,
+            "token_end": 58,
+            "label": "words_sender_organization"
+        }
+    ],
+    "-942312958_1": [
+        {
+            "start": 10,
+            "end": 46,
+            "token_start": 4,
+            "token_end": 11,
+            "label": "sentence_tone_polite"
+        },
+        {
+            "start": 142,
+            "end": 160,
+            "token_start": 32,
+            "token_end": 32,
+            "label": "sentence_url_third_party"
+        }
+    ],
+    "-942312958_2": [
+        {
+            "start": 47,
+            "end": 160,
+            "token_start": 12,
+            "token_end": 32,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 47,
+            "end": 160,
+            "token_start": 12,
+            "token_end": 32,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 205,
+            "end": 247,
+            "token_start": 42,
+            "token_end": 48,
+            "label": "signature"
+        },
+        {
+            "start": 205,
+            "end": 217,
+            "token_start": 42,
+            "token_end": 43,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 220,
+            "end": 247,
+            "token_start": 46,
+            "token_end": 48,
+            "label": "words_sender_organization"
+        }
+    ],
+    "-380291108_1": [
+        {
+            "start": 261,
+            "end": 413,
+            "token_start": 57,
+            "token_end": 82,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 261,
+            "end": 374,
+            "token_start": 57,
+            "token_end": 75,
+            "label": "sentence_intent_money"
+        }
+    ],
+    "-380291108_2": [
+        {
+            "start": 261,
+            "end": 375,
+            "token_start": 57,
+            "token_end": 76,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 261,
+            "end": 374,
+            "token_start": 57,
+            "token_end": 75,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 261,
+            "end": 374,
+            "token_start": 57,
+            "token_end": 75,
+            "label": "sentence_intent_money"
+        },
+        {
+            "start": 588,
+            "end": 600,
+            "token_start": 117,
+            "token_end": 118,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 588,
+            "end": 630,
+            "token_start": 117,
+            "token_end": 123,
+            "label": "signature"
+        },
+        {
+            "start": 603,
+            "end": 630,
+            "token_start": 121,
+            "token_end": 123,
+            "label": "words_sender_location"
+        }
+    ],
+    "100253485_1": [
+        {
+            "start": 118,
+            "end": 284,
+            "token_start": 26,
+            "token_end": 59,
+            "label": "sentence_intent_money"
+        },
+        {
+            "start": 286,
+            "end": 367,
+            "token_start": 61,
+            "token_end": 80,
+            "label": "sentence_intent_phonecall"
+        }
+    ],
+    "100253485_2": [
+        {
+            "start": 12,
+            "end": 44,
+            "token_start": 4,
+            "token_end": 10,
+            "label": "sentence_tone_polite"
+        },
+        {
+            "start": 118,
+            "end": 285,
+            "token_start": 26,
+            "token_end": 60,
+            "label": "sentence_intent_money"
+        },
+        {
+            "start": 286,
+            "end": 367,
+            "token_start": 61,
+            "token_end": 80,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 421,
+            "end": 463,
+            "token_start": 92,
+            "token_end": 98,
+            "label": "signature"
+        },
+        {
+            "start": 421,
+            "end": 433,
+            "token_start": 92,
+            "token_end": 93,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 436,
+            "end": 463,
+            "token_start": 96,
+            "token_end": 98,
+            "label": "words_sender_organization"
+        }
+    ],
+    "-11837559_1": [
+        {
+            "start": 105,
+            "end": 122,
+            "token_start": 23,
+            "token_end": 25,
+            "label": "words_sender_organization"
+        },
+        {
+            "start": 432,
+            "end": 517,
+            "token_start": 86,
+            "token_end": 98,
+            "label": "sentence_intent_attachment"
+        },
+        {
+            "start": 521,
+            "end": 558,
+            "token_start": 101,
+            "token_end": 107,
+            "label": "signature"
+        },
+        {
+            "start": 521,
+            "end": 528,
+            "token_start": 101,
+            "token_end": 101,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 531,
+            "end": 558,
+            "token_start": 104,
+            "token_end": 107,
+            "label": "signature_jobtitle"
+        }
+    ],
+    "431863971_1": [
+        {
+            "start": 22,
+            "end": 72,
+            "token_start": 6,
+            "token_end": 18,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 74,
+            "end": 140,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_intent_money"
+        },
+        {
+            "start": 143,
+            "end": 185,
+            "token_start": 35,
+            "token_end": 41,
+            "label": "signature"
+        },
+        {
+            "start": 143,
+            "end": 155,
+            "token_start": 35,
+            "token_end": 36,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 158,
+            "end": 185,
+            "token_start": 39,
+            "token_end": 41,
+            "label": "words_sender_organization"
+        }
+    ],
+    "1641087365_1": [
+        {
+            "start": 0,
+            "end": 142,
+            "token_start": 0,
+            "token_end": 32,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 22,
+            "end": 60,
+            "token_start": 7,
+            "token_end": 16,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 100,
+            "end": 142,
+            "token_start": 26,
+            "token_end": 32,
+            "label": "signature"
+        },
+        {
+            "start": 100,
+            "end": 112,
+            "token_start": 26,
+            "token_end": 27,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 115,
+            "end": 142,
+            "token_start": 30,
+            "token_end": 32,
+            "label": "words_sender_location"
+        }
+    ],
+    "-2037168311_1": [
+        {
+            "start": 0,
+            "end": 450,
+            "token_start": 0,
+            "token_end": 84,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 25,
+            "end": 177,
+            "token_start": 7,
+            "token_end": 32,
+            "label": "sentence_intent_money"
+        },
+        {
+            "start": 267,
+            "end": 358,
+            "token_start": 49,
+            "token_end": 65,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 408,
+            "end": 450,
+            "token_start": 78,
+            "token_end": 84,
+            "label": "signature"
+        },
+        {
+            "start": 408,
+            "end": 420,
+            "token_start": 78,
+            "token_end": 79,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 423,
+            "end": 450,
+            "token_start": 82,
+            "token_end": 84,
+            "label": "words_sender_organization"
+        }
+    ],
+    "-1865954525_1": [
+        {
+            "start": 0,
+            "end": 221,
+            "token_start": 0,
+            "token_end": 48,
+            "label": "message_contact_person_asking"
+        },
+        {
+            "start": 205,
+            "end": 221,
+            "token_start": 45,
+            "token_end": 48,
+            "label": "signature"
+        },
+        {
+            "start": 205,
+            "end": 211,
+            "token_start": 45,
+            "token_end": 45,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 214,
+            "end": 221,
+            "token_start": 48,
+            "token_end": 48,
+            "label": "signature_fullname"
+        }
+    ],
+    "-803242022_1": [
+        {
+            "start": 0,
+            "end": 562,
+            "token_start": 0,
+            "token_end": 112,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 11,
+            "end": 130,
+            "token_start": 4,
+            "token_end": 25,
+            "label": "sentence_intent_money"
+        },
+        {
+            "start": 186,
+            "end": 280,
+            "token_start": 38,
+            "token_end": 51,
+            "label": "sentence_intent_money"
+        },
+        {
+            "start": 186,
+            "end": 280,
+            "token_start": 38,
+            "token_end": 51,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 186,
+            "end": 280,
+            "token_start": 38,
+            "token_end": 51,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 282,
+            "end": 421,
+            "token_start": 53,
+            "token_end": 81,
+            "label": "sentence_intent_money"
+        },
+        {
+            "start": 520,
+            "end": 562,
+            "token_start": 106,
+            "token_end": 112,
+            "label": "signature"
+        },
+        {
+            "start": 520,
+            "end": 532,
+            "token_start": 106,
+            "token_end": 107,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 535,
+            "end": 562,
+            "token_start": 110,
+            "token_end": 112,
+            "label": "words_sender_organization"
+        }
+    ],
+    "1847502379_1": [
+        {
+            "start": 199,
+            "end": 227,
+            "token_start": 43,
+            "token_end": 49,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 230,
+            "end": 235,
+            "token_start": 51,
+            "token_end": 51,
+            "label": "signature"
+        },
+        {
+            "start": 230,
+            "end": 235,
+            "token_start": 51,
+            "token_end": 51,
+            "label": "signature_fullname"
+        }
+    ],
+    "1530455535_1": [
+        {
+            "start": 12,
+            "end": 87,
+            "token_start": 4,
+            "token_end": 16,
+            "label": "sentence_intent_service"
+        },
+        {
+            "start": 127,
+            "end": 144,
+            "token_start": 28,
+            "token_end": 31,
+            "label": "signature"
+        },
+        {
+            "start": 127,
+            "end": 136,
+            "token_start": 28,
+            "token_end": 29,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 138,
+            "end": 144,
+            "token_start": 31,
+            "token_end": 31,
+            "label": "signature_fullname"
+        }
+    ],
+    "91101168_1": [
+        {
+            "start": 0,
+            "end": 226,
+            "token_start": 0,
+            "token_end": 41,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 85,
+            "end": 188,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_intent_unsubscribe"
+        },
+        {
+            "start": 85,
+            "end": 188,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 85,
+            "end": 188,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 190,
+            "end": 226,
+            "token_start": 34,
+            "token_end": 41,
+            "label": "signature"
+        },
+        {
+            "start": 190,
+            "end": 199,
+            "token_start": 34,
+            "token_end": 35,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 219,
+            "end": 226,
+            "token_start": 41,
+            "token_end": 41,
+            "label": "words_sender_organization"
+        },
+        {
+            "start": 219,
+            "end": 226,
+            "token_start": 41,
+            "token_end": 41,
+            "label": "signature_org"
+        }
+    ],
+    "-1094989124_1": [
+        {
+            "start": 0,
+            "end": 227,
+            "token_start": 0,
+            "token_end": 41,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 86,
+            "end": 189,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_intent_unsubscribe"
+        },
+        {
+            "start": 86,
+            "end": 189,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 86,
+            "end": 189,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 191,
+            "end": 227,
+            "token_start": 34,
+            "token_end": 41,
+            "label": "signature"
+        },
+        {
+            "start": 191,
+            "end": 200,
+            "token_start": 34,
+            "token_end": 35,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 220,
+            "end": 227,
+            "token_start": 41,
+            "token_end": 41,
+            "label": "words_sender_organization"
+        },
+        {
+            "start": 220,
+            "end": 227,
+            "token_start": 41,
+            "token_end": 41,
+            "label": "signature_org"
+        }
+    ],
+    "61914134_1": [
+        {
+            "start": 0,
+            "end": 233,
+            "token_start": 0,
+            "token_end": 41,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 86,
+            "end": 194,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_intent_unsubscribe"
+        },
+        {
+            "start": 86,
+            "end": 194,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 86,
+            "end": 194,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 197,
+            "end": 233,
+            "token_start": 34,
+            "token_end": 41,
+            "label": "signature"
+        },
+        {
+            "start": 197,
+            "end": 206,
+            "token_start": 34,
+            "token_end": 35,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 226,
+            "end": 233,
+            "token_start": 41,
+            "token_end": 41,
+            "label": "words_sender_organization"
+        },
+        {
+            "start": 226,
+            "end": 233,
+            "token_start": 41,
+            "token_end": 41,
+            "label": "signature_org"
+        }
+    ],
+    "1098445528_1": [
+        {
+            "start": 86,
+            "end": 189,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_intent_unsubscribe"
+        },
+        {
+            "start": 86,
+            "end": 189,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 86,
+            "end": 189,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 191,
+            "end": 227,
+            "token_start": 34,
+            "token_end": 41,
+            "label": "signature"
+        },
+        {
+            "start": 191,
+            "end": 200,
+            "token_start": 34,
+            "token_end": 35,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 220,
+            "end": 227,
+            "token_start": 41,
+            "token_end": 41,
+            "label": "words_sender_organization"
+        },
+        {
+            "start": 220,
+            "end": 227,
+            "token_start": 41,
+            "token_end": 41,
+            "label": "signature_org"
+        }
+    ],
+    "-1667832677_1": [
+        {
+            "start": 0,
+            "end": 227,
+            "token_start": 0,
+            "token_end": 41,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 86,
+            "end": 189,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_intent_unsubscribe"
+        },
+        {
+            "start": 86,
+            "end": 189,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 86,
+            "end": 189,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 191,
+            "end": 227,
+            "token_start": 34,
+            "token_end": 41,
+            "label": "signature"
+        },
+        {
+            "start": 191,
+            "end": 200,
+            "token_start": 34,
+            "token_end": 35,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 220,
+            "end": 227,
+            "token_start": 41,
+            "token_end": 41,
+            "label": "signature_org"
+        }
+    ],
+    "-281829148_1": [
+        {
+            "start": 0,
+            "end": 443,
+            "token_start": 0,
+            "token_end": 83,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 85,
+            "end": 188,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_intent_unsubscribe"
+        },
+        {
+            "start": 85,
+            "end": 188,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 85,
+            "end": 188,
+            "token_start": 20,
+            "token_end": 32,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 407,
+            "end": 443,
+            "token_start": 76,
+            "token_end": 83,
+            "label": "signature"
+        },
+        {
+            "start": 407,
+            "end": 416,
+            "token_start": 76,
+            "token_end": 77,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 436,
+            "end": 443,
+            "token_start": 83,
+            "token_end": 83,
+            "label": "signature_org"
+        }
+    ],
+    "-817090585_1": [
+        {
+            "start": 0,
+            "end": 300,
+            "token_start": 0,
+            "token_end": 51,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 11,
+            "end": 120,
+            "token_start": 4,
+            "token_end": 21,
+            "label": "sentence_passwd"
+        },
+        {
+            "start": 123,
+            "end": 196,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_passwd"
+        },
+        {
+            "start": 123,
+            "end": 196,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 123,
+            "end": 196,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 276,
+            "end": 300,
+            "token_start": 48,
+            "token_end": 51,
+            "label": "signature"
+        },
+        {
+            "start": 293,
+            "end": 300,
+            "token_start": 51,
+            "token_end": 51,
+            "label": "signature_org"
+        }
+    ],
+    "-539005839_1": [
+        {
+            "start": 0,
+            "end": 308,
+            "token_start": 0,
+            "token_end": 51,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 10,
+            "end": 119,
+            "token_start": 4,
+            "token_end": 21,
+            "label": "sentence_passwd"
+        },
+        {
+            "start": 122,
+            "end": 204,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_passwd"
+        },
+        {
+            "start": 122,
+            "end": 204,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 122,
+            "end": 204,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 284,
+            "end": 308,
+            "token_start": 48,
+            "token_end": 51,
+            "label": "signature"
+        },
+        {
+            "start": 301,
+            "end": 308,
+            "token_start": 51,
+            "token_end": 51,
+            "label": "signature_org"
+        }
+    ],
+    "-781175316_1": [
+        {
+            "start": 0,
+            "end": 300,
+            "token_start": 0,
+            "token_end": 52,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 10,
+            "end": 119,
+            "token_start": 4,
+            "token_end": 21,
+            "label": "sentence_passwd"
+        },
+        {
+            "start": 122,
+            "end": 195,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_passwd"
+        },
+        {
+            "start": 122,
+            "end": 195,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 122,
+            "end": 195,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 276,
+            "end": 300,
+            "token_start": 49,
+            "token_end": 52,
+            "label": "signature"
+        },
+        {
+            "start": 293,
+            "end": 300,
+            "token_start": 52,
+            "token_end": 52,
+            "label": "signature_org"
+        }
+    ],
+    "1490631068_1": [
+        {
+            "start": 0,
+            "end": 220,
+            "token_start": 0,
+            "token_end": 50,
+            "label": "message_contact_person_asking"
+        },
+        {
+            "start": 11,
+            "end": 42,
+            "token_start": 4,
+            "token_end": 10,
+            "label": "sentence_intent_intro"
+        },
+        {
+            "start": 37,
+            "end": 42,
+            "token_start": 10,
+            "token_end": 10,
+            "label": "words_sender_organization"
+        },
+        {
+            "start": 204,
+            "end": 220,
+            "token_start": 47,
+            "token_end": 50,
+            "label": "signature"
+        },
+        {
+            "start": 204,
+            "end": 213,
+            "token_start": 47,
+            "token_end": 48,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 215,
+            "end": 220,
+            "token_start": 50,
+            "token_end": 50,
+            "label": "signature_fullname"
+        }
+    ],
+    "205988985_1": [
+        {
+            "start": 11,
+            "end": 109,
+            "token_start": 4,
+            "token_end": 20,
+            "label": "sentence_intent_service"
+        },
+        {
+            "start": 111,
+            "end": 173,
+            "token_start": 22,
+            "token_end": 30,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 175,
+            "end": 180,
+            "token_start": 32,
+            "token_end": 32,
+            "label": "signature"
+        },
+        {
+            "start": 175,
+            "end": 180,
+            "token_start": 32,
+            "token_end": 32,
+            "label": "signature_fullname"
+        }
+    ],
+    "-118051558_1": [
+        {
+            "start": 65,
+            "end": 113,
+            "token_start": 16,
+            "token_end": 26,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 158,
+            "end": 171,
+            "token_start": 40,
+            "token_end": 42,
+            "label": "signature"
+        },
+        {
+            "start": 158,
+            "end": 164,
+            "token_start": 40,
+            "token_end": 40,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 166,
+            "end": 171,
+            "token_start": 42,
+            "token_end": 42,
+            "label": "signature_fullname"
+        }
+    ],
+    "-2098977545_1": [
+        {
+            "start": 11,
+            "end": 103,
+            "token_start": 4,
+            "token_end": 27,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 106,
+            "end": 119,
+            "token_start": 29,
+            "token_end": 32,
+            "label": "signature"
+        },
+        {
+            "start": 106,
+            "end": 110,
+            "token_start": 29,
+            "token_end": 29,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 113,
+            "end": 119,
+            "token_start": 32,
+            "token_end": 32,
+            "label": "signature_fullname"
+        }
+    ],
+    "-1304430106_1": [
+        {
+            "start": 0,
+            "end": 51,
+            "token_start": 0,
+            "token_end": 11,
+            "label": "sentence_intent_recruiting"
+        }
+    ],
+    "-1176379947_1": [
+        {
+            "start": 78,
+            "end": 140,
+            "token_start": 19,
+            "token_end": 36,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 144,
+            "end": 159,
+            "token_start": 39,
+            "token_end": 42,
+            "label": "signature"
+        },
+        {
+            "start": 144,
+            "end": 150,
+            "token_start": 39,
+            "token_end": 39,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 153,
+            "end": 159,
+            "token_start": 42,
+            "token_end": 42,
+            "label": "signature_fullname"
+        }
+    ],
+    "7695797_1": [
+        {
+            "start": 69,
+            "end": 100,
+            "token_start": 23,
+            "token_end": 29,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 103,
+            "end": 115,
+            "token_start": 32,
+            "token_end": 35,
+            "label": "signature"
+        },
+        {
+            "start": 103,
+            "end": 109,
+            "token_start": 32,
+            "token_end": 32,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 112,
+            "end": 115,
+            "token_start": 35,
+            "token_end": 35,
+            "label": "signature_fullname"
+        }
+    ],
+    "1851070579_1": [
+        {
+            "start": 104,
+            "end": 142,
+            "token_start": 25,
+            "token_end": 33,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 143,
+            "end": 172,
+            "token_start": 34,
+            "token_end": 40,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 237,
+            "end": 247,
+            "token_start": 55,
+            "token_end": 58,
+            "label": "signature"
+        },
+        {
+            "start": 237,
+            "end": 241,
+            "token_start": 55,
+            "token_end": 55,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 244,
+            "end": 247,
+            "token_start": 58,
+            "token_end": 58,
+            "label": "signature_fullname"
+        }
+    ],
+    "681371128_1": [
+        {
+            "start": 73,
+            "end": 136,
+            "token_start": 16,
+            "token_end": 34,
+            "label": "sentence_intent_phonecall"
+        }
+    ],
+    "-515611154_1": [
+        {
+            "start": 11,
+            "end": 57,
+            "token_start": 4,
+            "token_end": 17,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 60,
+            "end": 72,
+            "token_start": 20,
+            "token_end": 23,
+            "label": "signature"
+        },
+        {
+            "start": 60,
+            "end": 66,
+            "token_start": 20,
+            "token_end": 20,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 69,
+            "end": 72,
+            "token_start": 23,
+            "token_end": 23,
+            "label": "signature_fullname"
+        }
+    ],
+    "86005496_1": [
+        {
+            "start": 24,
+            "end": 67,
+            "token_start": 8,
+            "token_end": 18,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 69,
+            "end": 97,
+            "token_start": 20,
+            "token_end": 26,
+            "label": "sentence_intent_phonecall"
+        }
+    ],
+    "-121411839_1": [
+        {
+            "start": 135,
+            "end": 151,
+            "token_start": 35,
+            "token_end": 38,
+            "label": "signature"
+        },
+        {
+            "start": 135,
+            "end": 141,
+            "token_start": 35,
+            "token_end": 35,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 144,
+            "end": 151,
+            "token_start": 38,
+            "token_end": 38,
+            "label": "signature_fullname"
+        }
+    ],
+    "793524512_1": [
+        {
+            "start": 10,
+            "end": 68,
+            "token_start": 4,
+            "token_end": 20,
+            "label": "sentence_intent_phonecall"
+        }
+    ],
+    "1895595226_1": [
+        {
+            "start": 0,
+            "end": 366,
+            "token_start": 0,
+            "token_end": 64,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 0,
+            "end": 366,
+            "token_start": 0,
+            "token_end": 64,
+            "label": "message_official_email"
+        },
+        {
+            "start": 330,
+            "end": 366,
+            "token_start": 58,
+            "token_end": 64,
+            "label": "signature"
+        },
+        {
+            "start": 330,
+            "end": 339,
+            "token_start": 58,
+            "token_end": 59,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 342,
+            "end": 366,
+            "token_start": 62,
+            "token_end": 64,
+            "label": "signature_org"
+        }
+    ],
+    "-271426091_1": [
+        {
+            "start": 0,
+            "end": 367,
+            "token_start": 0,
+            "token_end": 64,
+            "label": "message_contact_person_asking"
+        },
+        {
+            "start": 0,
+            "end": 367,
+            "token_start": 0,
+            "token_end": 64,
+            "label": "message_official_email"
+        },
+        {
+            "start": 331,
+            "end": 367,
+            "token_start": 58,
+            "token_end": 64,
+            "label": "signature"
+        },
+        {
+            "start": 331,
+            "end": 340,
+            "token_start": 58,
+            "token_end": 59,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 343,
+            "end": 367,
+            "token_start": 62,
+            "token_end": 64,
+            "label": "signature_org"
+        }
+    ],
+    "-535784310_1": [
+        {
+            "start": 199,
+            "end": 314,
+            "token_start": 40,
+            "token_end": 62,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 315,
+            "end": 443,
+            "token_start": 63,
+            "token_end": 78,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 544,
+            "end": 580,
+            "token_start": 99,
+            "token_end": 105,
+            "label": "signature"
+        },
+        {
+            "start": 544,
+            "end": 554,
+            "token_start": 99,
+            "token_end": 101,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 556,
+            "end": 580,
+            "token_start": 103,
+            "token_end": 105,
+            "label": "signature_org"
+        }
+    ],
+    "-1730884650_1": [
+        {
+            "start": 199,
+            "end": 313,
+            "token_start": 40,
+            "token_end": 61,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 315,
+            "end": 443,
+            "token_start": 63,
+            "token_end": 78,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 544,
+            "end": 580,
+            "token_start": 99,
+            "token_end": 105,
+            "label": "signature"
+        },
+        {
+            "start": 544,
+            "end": 553,
+            "token_start": 99,
+            "token_end": 100,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 556,
+            "end": 580,
+            "token_start": 103,
+            "token_end": 105,
+            "label": "signature_org"
+        }
+    ],
+    "1810151738_1": [
+        {
+            "start": 178,
+            "end": 292,
+            "token_start": 37,
+            "token_end": 58,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 294,
+            "end": 411,
+            "token_start": 60,
+            "token_end": 75,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 415,
+            "end": 454,
+            "token_start": 77,
+            "token_end": 83,
+            "label": "signature"
+        },
+        {
+            "start": 415,
+            "end": 424,
+            "token_start": 77,
+            "token_end": 78,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 430,
+            "end": 454,
+            "token_start": 81,
+            "token_end": 83,
+            "label": "signature_org"
+        }
+    ],
+    "1259127213_1": [
+        {
+            "start": 42,
+            "end": 82,
+            "token_start": 13,
+            "token_end": 20,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 84,
+            "end": 108,
+            "token_start": 22,
+            "token_end": 26,
+            "label": "sentence_intent_phonecall"
+        }
+    ],
+    "-1088741414_1": [
+        {
+            "start": 0,
+            "end": 145,
+            "token_start": 0,
+            "token_end": 33,
+            "label": "message_contact_person_asking"
+        }
+    ],
+    "1020192976_1": [
+        {
+            "start": 101,
+            "end": 112,
+            "token_start": 29,
+            "token_end": 31,
+            "label": "signature"
+        },
+        {
+            "start": 101,
+            "end": 105,
+            "token_start": 29,
+            "token_end": 29,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 107,
+            "end": 112,
+            "token_start": 31,
+            "token_end": 31,
+            "label": "signature_fullname"
+        }
+    ],
+    "1836337977_1": [
+        {
+            "start": 108,
+            "end": 134,
+            "token_start": 31,
+            "token_end": 37,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 136,
+            "end": 148,
+            "token_start": 39,
+            "token_end": 42,
+            "label": "signature"
+        },
+        {
+            "start": 136,
+            "end": 142,
+            "token_start": 39,
+            "token_end": 39,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 145,
+            "end": 148,
+            "token_start": 42,
+            "token_end": 42,
+            "label": "signature_fullname"
+        }
+    ],
+    "420909319_1": [
+        {
+            "start": 10,
+            "end": 91,
+            "token_start": 3,
+            "token_end": 19,
+            "label": "sentence_intent_scheduling"
+        },
+        {
+            "start": 93,
+            "end": 132,
+            "token_start": 21,
+            "token_end": 29,
+            "label": "sentence_intent_recruiting"
+        },
+        {
+            "start": 135,
+            "end": 146,
+            "token_start": 32,
+            "token_end": 34,
+            "label": "signature"
+        },
+        {
+            "start": 135,
+            "end": 139,
+            "token_start": 32,
+            "token_end": 32,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 141,
+            "end": 146,
+            "token_start": 34,
+            "token_end": 34,
+            "label": "signature_fullname"
+        }
+    ],
+    "-496965679_1": [
+        {
+            "start": 11,
+            "end": 60,
+            "token_start": 4,
+            "token_end": 19,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 63,
+            "end": 75,
+            "token_start": 22,
+            "token_end": 25,
+            "label": "signature"
+        },
+        {
+            "start": 63,
+            "end": 69,
+            "token_start": 22,
+            "token_end": 22,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 72,
+            "end": 75,
+            "token_start": 25,
+            "token_end": 25,
+            "label": "signature_fullname"
+        }
+    ],
+    "-1092494282_1": [
+        {
+            "start": 0,
+            "end": 140,
+            "token_start": 0,
+            "token_end": 36,
+            "label": "message_contact_person_asking"
+        },
+        {
+            "start": 101,
+            "end": 125,
+            "token_start": 26,
+            "token_end": 30,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 128,
+            "end": 140,
+            "token_start": 33,
+            "token_end": 36,
+            "label": "signature"
+        },
+        {
+            "start": 128,
+            "end": 134,
+            "token_start": 33,
+            "token_end": 33,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 137,
+            "end": 140,
+            "token_start": 36,
+            "token_end": 36,
+            "label": "signature_fullname"
+        }
+    ],
+    "-1631149564_1": [
+        {
+            "start": 11,
+            "end": 43,
+            "token_start": 4,
+            "token_end": 13,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 45,
+            "end": 102,
+            "token_start": 15,
+            "token_end": 27,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 106,
+            "end": 121,
+            "token_start": 30,
+            "token_end": 33,
+            "label": "signature"
+        },
+        {
+            "start": 106,
+            "end": 112,
+            "token_start": 30,
+            "token_end": 30,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 115,
+            "end": 121,
+            "token_start": 33,
+            "token_end": 33,
+            "label": "signature_fullname"
+        }
+    ],
+    "762360560_1": [
+        {
+            "start": 27,
+            "end": 66,
+            "token_start": 7,
+            "token_end": 14,
+            "label": "sentence_intent_phonecall"
+        }
+    ],
+    "1743039116_1": [
+        {
+            "start": 0,
+            "end": 154,
+            "token_start": 0,
+            "token_end": 34,
+            "label": "message_contact_person_asking"
+        }
+    ],
+    "-514042187_1": [
+        {
+            "start": 0,
+            "end": 234,
+            "token_start": 0,
+            "token_end": 55,
+            "label": "message_contact_person_asking"
+        },
+        {
+            "start": 221,
+            "end": 234,
+            "token_start": 52,
+            "token_end": 55,
+            "label": "signature"
+        },
+        {
+            "start": 221,
+            "end": 225,
+            "token_start": 52,
+            "token_end": 52,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 228,
+            "end": 234,
+            "token_start": 55,
+            "token_end": 55,
+            "label": "signature_fullname"
+        }
+    ],
+    "454077039_1": [
+        {
+            "start": 43,
+            "end": 91,
+            "token_start": 12,
+            "token_end": 22,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 93,
+            "end": 112,
+            "token_start": 24,
+            "token_end": 28,
+            "label": "sentence_intent_phonecall"
+        },
+        {
+            "start": 114,
+            "end": 124,
+            "token_start": 30,
+            "token_end": 33,
+            "label": "signature"
+        },
+        {
+            "start": 114,
+            "end": 118,
+            "token_start": 30,
+            "token_end": 30,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 121,
+            "end": 124,
+            "token_start": 33,
+            "token_end": 33,
+            "label": "signature_fullname"
+        }
+    ],
+    "750684394_1": [
+        {
+            "start": 0,
+            "end": 300,
+            "token_start": 0,
+            "token_end": 51,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 11,
+            "end": 120,
+            "token_start": 4,
+            "token_end": 21,
+            "label": "sentence_passwd"
+        },
+        {
+            "start": 123,
+            "end": 196,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_passwd"
+        },
+        {
+            "start": 123,
+            "end": 196,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 123,
+            "end": 196,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 276,
+            "end": 300,
+            "token_start": 48,
+            "token_end": 51,
+            "label": "signature"
+        },
+        {
+            "start": 293,
+            "end": 300,
+            "token_start": 51,
+            "token_end": 51,
+            "label": "signature_org"
+        }
+    ],
+    "1841328114_1": [
+        {
+            "start": 0,
+            "end": 169,
+            "token_start": 0,
+            "token_end": 39,
+            "label": "message_contact_person_asking"
+        },
+        {
+            "start": 157,
+            "end": 169,
+            "token_start": 36,
+            "token_end": 39,
+            "label": "signature"
+        },
+        {
+            "start": 157,
+            "end": 163,
+            "token_start": 36,
+            "token_end": 36,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 166,
+            "end": 169,
+            "token_start": 39,
+            "token_end": 39,
+            "label": "signature_fullname"
+        }
+    ],
+    "742212893_1": [
+        {
+            "start": 0,
+            "end": 529,
+            "token_start": 0,
+            "token_end": 85,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 109,
+            "end": 206,
+            "token_start": 22,
+            "token_end": 32,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 109,
+            "end": 206,
+            "token_start": 22,
+            "token_end": 32,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 318,
+            "end": 499,
+            "token_start": 55,
+            "token_end": 79,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 318,
+            "end": 499,
+            "token_start": 55,
+            "token_end": 79,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 501,
+            "end": 507,
+            "token_start": 81,
+            "token_end": 81,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 501,
+            "end": 529,
+            "token_start": 81,
+            "token_end": 85,
+            "label": "signature"
+        },
+        {
+            "start": 509,
+            "end": 529,
+            "token_start": 83,
+            "token_end": 85,
+            "label": "signature_org"
+        }
+    ],
+    "-1991185769_1": [
+        {
+            "start": 0,
+            "end": 308,
+            "token_start": 0,
+            "token_end": 57,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 272,
+            "end": 308,
+            "token_start": 51,
+            "token_end": 57,
+            "label": "signature"
+        },
+        {
+            "start": 272,
+            "end": 281,
+            "token_start": 51,
+            "token_end": 52,
+            "label": "signature_signoff"
+        },
+        {
+            "start": 284,
+            "end": 308,
+            "token_start": 55,
+            "token_end": 57,
+            "label": "signature_org"
+        }
+    ],
+    "265747965_1": [
+        {
+            "start": 0,
+            "end": 172,
+            "token_start": 0,
+            "token_end": 38,
+            "label": "message_contact_person_asking"
+        }
+    ],
+    "1716010214_1": [
+        {
+            "start": 0,
+            "end": 99,
+            "token_start": 0,
+            "token_end": 22,
+            "label": "sentence_intent_money"
+        },
+        {
+            "start": 0,
+            "end": 260,
+            "token_start": 0,
+            "token_end": 41,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 148,
+            "end": 247,
+            "token_start": 34,
+            "token_end": 39,
+            "label": "sentence_intent_money"
+        },
+        {
+            "start": 148,
+            "end": 247,
+            "token_start": 34,
+            "token_end": 39,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 148,
+            "end": 247,
+            "token_start": 34,
+            "token_end": 39,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 248,
+            "end": 260,
+            "token_start": 40,
+            "token_end": 41,
+            "label": "signature"
+        },
+        {
+            "start": 248,
+            "end": 260,
+            "token_start": 40,
+            "token_end": 41,
+            "label": "signature_org"
+        }
+    ],
+    "-412665680_1": [
+        {
+            "start": 18,
+            "end": 176,
+            "token_start": 5,
+            "token_end": 32,
+            "label": "sentence_intent_service"
+        },
+        {
+            "start": 341,
+            "end": 404,
+            "token_start": 66,
+            "token_end": 78,
+            "label": "sentence_intent_money"
+        },
+        {
+            "start": 530,
+            "end": 634,
+            "token_start": 101,
+            "token_end": 117,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 530,
+            "end": 634,
+            "token_start": 101,
+            "token_end": 117,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 530,
+            "end": 634,
+            "token_start": 101,
+            "token_end": 117,
+            "label": "sentence_intent_recruiting"
+        },
+        {
+            "start": 956,
+            "end": 965,
+            "token_start": 170,
+            "token_end": 171,
+            "label": "signature"
+        },
+        {
+            "start": 956,
+            "end": 965,
+            "token_start": 170,
+            "token_end": 171,
+            "label": "signature_signoff"
+        }
+    ],
+    "-1086238208_1": [
+        {
+            "start": 14,
+            "end": 172,
+            "token_start": 4,
+            "token_end": 31,
+            "label": "sentence_intent_service"
+        },
+        {
+            "start": 337,
+            "end": 400,
+            "token_start": 65,
+            "token_end": 77,
+            "label": "sentence_intent_money"
+        },
+        {
+            "start": 526,
+            "end": 630,
+            "token_start": 100,
+            "token_end": 116,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 526,
+            "end": 630,
+            "token_start": 100,
+            "token_end": 116,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 632,
+            "end": 706,
+            "token_start": 118,
+            "token_end": 131,
+            "label": "sentence_intent_attachment"
+        },
+        {
+            "start": 711,
+            "end": 720,
+            "token_start": 134,
+            "token_end": 135,
+            "label": "signature"
+        },
+        {
+            "start": 711,
+            "end": 720,
+            "token_start": 134,
+            "token_end": 135,
+            "label": "signature_signoff"
+        }
+    ],
+    "189680605_1": [
+        {
+            "start": 15,
+            "end": 53,
+            "token_start": 3,
+            "token_end": 10,
+            "label": "sentence_tone_urgent"
+        },
+        {
+            "start": 107,
+            "end": 202,
+            "token_start": 21,
+            "token_end": 31,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 107,
+            "end": 202,
+            "token_start": 21,
+            "token_end": 31,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 204,
+            "end": 298,
+            "token_start": 33,
+            "token_end": 45,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 204,
+            "end": 298,
+            "token_start": 33,
+            "token_end": 45,
+            "label": "sentence_intent_click"
+        }
+    ],
+    "-486088296_1": [
+        {
+            "start": 18,
+            "end": 56,
+            "token_start": 4,
+            "token_end": 11,
+            "label": "sentence_tone_urgent"
+        },
+        {
+            "start": 110,
+            "end": 205,
+            "token_start": 22,
+            "token_end": 32,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 110,
+            "end": 205,
+            "token_start": 22,
+            "token_end": 32,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 207,
+            "end": 305,
+            "token_start": 34,
+            "token_end": 46,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 207,
+            "end": 305,
+            "token_start": 34,
+            "token_end": 46,
+            "label": "sentence_url_third_party"
+        }
+    ],
+    "540234916_1": [
+        {
+            "start": 0,
+            "end": 181,
+            "token_start": 0,
+            "token_end": 39,
+            "label": "message_contact_person_asking"
+        },
+        {
+            "start": 68,
+            "end": 132,
+            "token_start": 19,
+            "token_end": 26,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 68,
+            "end": 132,
+            "token_start": 19,
+            "token_end": 26,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 176,
+            "end": 181,
+            "token_start": 39,
+            "token_end": 39,
+            "label": "signature"
+        },
+        {
+            "start": 176,
+            "end": 181,
+            "token_start": 39,
+            "token_end": 39,
+            "label": "signature_signoff"
+        }
+    ],
+    "457588334_1": [
+        {
+            "start": 0,
+            "end": 340,
+            "token_start": 0,
+            "token_end": 71,
+            "label": "message_contact_person_asking"
+        },
+        {
+            "start": 334,
+            "end": 340,
+            "token_start": 71,
+            "token_end": 71,
+            "label": "signature"
+        },
+        {
+            "start": 334,
+            "end": 340,
+            "token_start": 71,
+            "token_end": 71,
+            "label": "signature_signoff"
+        }
+    ],
+    "-1089592239_1": [
+        {
+            "start": 0,
+            "end": 114,
+            "token_start": 0,
+            "token_end": 30,
+            "label": "message_contact_person_asking"
+        },
+        {
+            "start": 39,
+            "end": 71,
+            "token_start": 13,
+            "token_end": 18,
+            "label": "sentence_tone_polite"
+        },
+        {
+            "start": 109,
+            "end": 114,
+            "token_start": 30,
+            "token_end": 30,
+            "label": "signature"
+        },
+        {
+            "start": 109,
+            "end": 114,
+            "token_start": 30,
+            "token_end": 30,
+            "label": "signature_signoff"
+        }
+    ],
+    "2147349301_1": [
+        {
+            "start": 0,
+            "end": 307,
+            "token_start": 0,
+            "token_end": 50,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 11,
+            "end": 120,
+            "token_start": 4,
+            "token_end": 21,
+            "label": "sentence_passwd"
+        },
+        {
+            "start": 123,
+            "end": 205,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_passwd"
+        },
+        {
+            "start": 123,
+            "end": 205,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 123,
+            "end": 205,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 283,
+            "end": 307,
+            "token_start": 47,
+            "token_end": 50,
+            "label": "signature"
+        },
+        {
+            "start": 300,
+            "end": 307,
+            "token_start": 50,
+            "token_end": 50,
+            "label": "signature_org"
+        }
+    ],
+    "474152510_1": [
+        {
+            "start": 0,
+            "end": 308,
+            "token_start": 0,
+            "token_end": 51,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 11,
+            "end": 120,
+            "token_start": 4,
+            "token_end": 21,
+            "label": "sentence_passwd"
+        },
+        {
+            "start": 123,
+            "end": 205,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_passwd"
+        },
+        {
+            "start": 123,
+            "end": 205,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 123,
+            "end": 205,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 284,
+            "end": 308,
+            "token_start": 48,
+            "token_end": 51,
+            "label": "signature"
+        },
+        {
+            "start": 301,
+            "end": 308,
+            "token_start": 51,
+            "token_end": 51,
+            "label": "signature_org"
+        }
+    ],
+    "1523916732_1": [
+        {
+            "start": 0,
+            "end": 873,
+            "token_start": 0,
+            "token_end": 156,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 0,
+            "end": 873,
+            "token_start": 0,
+            "token_end": 156,
+            "label": "message_contact_person_asking"
+        },
+        {
+            "start": 301,
+            "end": 412,
+            "token_start": 53,
+            "token_end": 73,
+            "label": "sentence_passwd"
+        },
+        {
+            "start": 414,
+            "end": 625,
+            "token_start": 75,
+            "token_end": 115,
+            "label": "sentence_passwd"
+        },
+        {
+            "start": 414,
+            "end": 625,
+            "token_start": 75,
+            "token_end": 115,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 414,
+            "end": 625,
+            "token_start": 75,
+            "token_end": 115,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 792,
+            "end": 873,
+            "token_start": 148,
+            "token_end": 156,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 792,
+            "end": 873,
+            "token_start": 148,
+            "token_end": 156,
+            "label": "sentence_url_third_party"
+        }
+    ],
+    "-1130025714_1": [
+        {
+            "start": 0,
+            "end": 330,
+            "token_start": 0,
+            "token_end": 52,
+            "label": "message_contact_person_org"
+        },
+        {
+            "start": 11,
+            "end": 120,
+            "token_start": 4,
+            "token_end": 21,
+            "label": "sentence_passwd"
+        },
+        {
+            "start": 123,
+            "end": 196,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_passwd"
+        },
+        {
+            "start": 123,
+            "end": 196,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_intent_click"
+        },
+        {
+            "start": 123,
+            "end": 196,
+            "token_start": 24,
+            "token_end": 32,
+            "label": "sentence_url_third_party"
+        },
+        {
+            "start": 306,
+            "end": 330,
+            "token_start": 49,
+            "token_end": 52,
+            "label": "signature"
+        },
+        {
+            "start": 323,
+            "end": 330,
+            "token_start": 52,
+            "token_end": 52,
+            "label": "signature_org"
+        }
+    ]
+}
