@@ -34,8 +34,6 @@ with open("/Users/mitch/research/piranha/prodigy-tools/datasets/apwg_annotated_d
 
 
 
-print(annotators_annotations)
-
 emails_annotators_list = {}
 
 for key in annotators_annotations:
@@ -48,7 +46,7 @@ for key in annotators_annotations:
     else:
         emails_annotators_list[email_hash] = [name]
 
-print(emails_annotators_list)
+
 
 intersecting_annotations = {}
 
@@ -60,7 +58,6 @@ for email_hash in emails_annotators_list:
             intersecting_annotations[email_hash+'_'+str(startIdx)] = notes
             startIdx += 1
 
-print(intersecting_annotations)
 
 total_annotations = {}
 
@@ -71,17 +68,8 @@ for email_hash in emails_annotators_list:
         total_annotations[email_hash+'_'+str(startIdx)] = notes
         startIdx += 1
 
-print(total_annotations)
 
 
-# with open("C:\\Users\\neele\\PIRANHA\\email_hash_lookup.json", 'w') as out:
-#     json.dump(emails, out, indent=4)
-#
-# with open("C:\\Users\\neele\\PIRANHA\\intersecting_annotations_ta3_mitch_neel.json", 'w') as out:
-#     json.dump(intersecting_annotations, out, indent=4)
-#
-# with open("C:\\Users\\neele\\PIRANHA\\total_annotations_mitch_neel.json", 'w') as out:
-#     json.dump(total_annotations, out, indent=4)
 
 combined_annotations = {}
 
@@ -97,8 +85,6 @@ for e_hash_count in intersecting_annotations:
             combined_annotations[email_hash].append(data)
         else:
             combined_annotations[email_hash] = data
-
-print(combined_annotations)
 
 track_labels_per_email={}
 
@@ -129,9 +115,20 @@ for k,v in intersecting_annotations.items():
 
 print(email_hash_vs_bothannotatorlabelset)
 
+annotator_message_label_vs_count={}
+#go through each of the email vs annotator set labels and see if there is a message_*
+for hash,dict_tango in email_hash_vs_bothannotatorlabelset.items():
+    for anns,setlabels in dict_tango.items():
+        for labels in setlabels:
+            if "message" in labels:
+                key_annotator_label=anns+"_"+labels
+                if key_annotator_label in annotator_message_label_vs_count:
+                    current_value=annotator_message_label_vs_count[key_annotator_label]
+                    annotator_message_label_vs_count[key_annotator_label]  =current_value+1
+                else:
+                    annotator_message_label_vs_count[key_annotator_label]=1
 
-        
-    
+print(annotator_message_label_vs_count)
 
         
 
