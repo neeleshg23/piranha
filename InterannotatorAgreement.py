@@ -13,6 +13,9 @@ annotator2Idx = 0
 annotator1_name="uma"
 annotator2_name="zoe"
 
+annotator_id_vs_name={1:annotator1_name, 2:annotator2_name}
+
+
 with open("/Users/mitch/research/piranha/prodigy-tools/datasets/apwg_annotated_data_oct10th2022.jsonl", 'r') as f:
     Lines = f.readlines()
     for line in Lines:
@@ -113,7 +116,6 @@ for k,v in intersecting_annotations.items():
     else:
         email_hash_vs_bothannotatorlabelset[hash]=this_annotator_vs_labelset_dict_charlie
 
-print(email_hash_vs_bothannotatorlabelset)
 
 annotator_message_label_vs_count={}
 #go through each of the email vs annotator set labels and see if there is a message_*
@@ -121,14 +123,15 @@ for hash,dict_tango in email_hash_vs_bothannotatorlabelset.items():
     for anns,setlabels in dict_tango.items():
         for labels in setlabels:
             if "message" in labels:
-                key_annotator_label=anns+"_"+labels
+                name_annotator=annotator_id_vs_name[int(anns)]
+                key_annotator_label=name_annotator+"_"+labels
                 if key_annotator_label in annotator_message_label_vs_count:
                     current_value=annotator_message_label_vs_count[key_annotator_label]
                     annotator_message_label_vs_count[key_annotator_label]  =current_value+1
                 else:
                     annotator_message_label_vs_count[key_annotator_label]=1
-
-print(annotator_message_label_vs_count)
+for k,v in annotator_message_label_vs_count.items():
+    print(f"{k}:{v}")
 
         
 
