@@ -10,8 +10,10 @@ emails = {}
 annotators_annotations = {}
 annotator1Idx = 0
 annotator2Idx = 0
+annotator1_name="uma"
+annotator2_name="zow"
 
-with open("C:\\Users\\neele\\PIRANHA\\ta3_retrieved_using_86_annotations_and_annotated.jsonl", 'r') as f:
+with open("/Users/mitch/research/piranha/prodigy-tools/datasets/apwg_annotated_data_oct10th2022.jsonl", 'r') as f:
     Lines = f.readlines()
     for line in Lines:
         entry = json.loads(line)
@@ -22,12 +24,13 @@ with open("C:\\Users\\neele\\PIRANHA\\ta3_retrieved_using_86_annotations_and_ann
             emailAnnotatorsCount[email_hash] = 1
         emails[email_hash] = entry['text']
         if 'spans' in entry:
-            if entry['_annotator_id'] == 'ta3_retrieved_using_86_annotations-neel':
-                annotators_annotations['neel_'+str(email_hash)] = entry['spans']
-                annotator1Idx += 1
-            elif entry['_annotator_id'] == 'ta3_retrieved_using_86_annotations-mithun':
-                annotators_annotations['mithun_'+str(email_hash)] = entry['spans']
-                annotator2Idx += 1
+            if "_annotator_id" in entry:
+                if annotator1_name in entry['_annotator_id'] :
+                    annotators_annotations[annotator1_name+str(email_hash)] = entry['spans']
+                    annotator1Idx += 1
+                elif  annotator2_name in entry['_annotator_id'] :
+                    annotators_annotations[annotator2_name+str(email_hash)] = entry['spans']
+                    annotator2Idx += 1
 
 
 
