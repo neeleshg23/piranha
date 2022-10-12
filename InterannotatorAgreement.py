@@ -101,6 +101,8 @@ for e_hash_count in intersecting_annotations:
 print(combined_annotations)
 
 track_labels_per_email={}
+
+#e.g., {19239202; dict(ann1;set(labels1), ann2:set(labels2))}
 email_hash_vs_bothannotatorlabelset={}
 
 for k,v in intersecting_annotations.items():
@@ -111,43 +113,22 @@ for k,v in intersecting_annotations.items():
     for entry in v:
         if "label" in entry:
             labels_this_annotator.append(entry["label"])
-    email_hash_vs_bothannotatorlabelset[hash]=set(labels_this_annotator)
+    set_labels_this_annotator=set(labels_this_annotator)
+    this_annotator_vs_labelset_dict_charlie={}
+    this_annotator_vs_labelset_dict_charlie[anotattor]=set_labels_this_annotator
 
+    if hash in email_hash_vs_bothannotatorlabelset:
+        dict_charlie=email_hash_vs_bothannotatorlabelset[hash]
+        if anotattor in dict_charlie:
+            print("error. this annotator shouldnt be here")
+        else:
+            dict_charlie[anotattor]=set_labels_this_annotator
+            email_hash_vs_bothannotatorlabelset[hash]=dict_charlie
+    else:
+        email_hash_vs_bothannotatorlabelset[hash]=this_annotator_vs_labelset_dict_charlie
 
-for k,v in intersecting_annotations.items():
-    splits=k.split("_")
-    hash=splits[0]
-    anotattor=splits[1]
-    flag_am_second_annotator=False
-    if hash in email_vs_annotator:
-        existing_annotator_id=email_vs_annotator[hash]
-        if existing_annotator_id!=  anotattor :
-            flag_am_second_annotator=True
-    for entry in v:
-        if "label" in entry:
-            if anotattor in track_labels_per_email:
-                current=track_labels_per_email[anotattor]
-                current.append(entry["label"])
-                track_labels_per_email[anotattor]=current
-            else:
-                track_labels_per_email[anotattor]=[entry["label"]]
+print(email_hash_vs_bothannotatorlabelset)
 
-
-
-
-
-# for annotation in annotations:
-#     notes, email_hash = annotation
-#     email_annotations = []
-#     for note in notes:
-#         label_data = (note['label'], note['token_start'], note['token_end'])
-#         email_annotations.append(label_data)
-#     if email_hash in res:
-#         res[email_hash].append(email_annotations)
-#     else:
-#         res[email_hash] = email_annotations
-
-# combined_annotations = {}
 
         
     
