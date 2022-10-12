@@ -10,8 +10,8 @@ emails = {}
 annotators_annotations = {}
 annotator1Idx = 0
 annotator2Idx = 0
-annotator1_name="uma"
-annotator2_name="zoe"
+annotator1_name="neel"
+annotator2_name="uma"
 
 annotator_id_vs_name={1:annotator1_name, 2:annotator2_name}
 
