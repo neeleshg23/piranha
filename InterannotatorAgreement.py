@@ -118,20 +118,46 @@ for k,v in intersecting_annotations.items():
 
 
 annotator_message_label_vs_count={}
+dict_bravo_hash_messageLevelLabel_vs_annotatorId={}
+
 #go through each of the email vs annotator set labels and see if there is a message_*
 for hash,dict_tango in email_hash_vs_bothannotatorlabelset.items():
-    for anns,setlabels in dict_tango.items():
-        for labels in setlabels:
-            if "message" in labels:
-                name_annotator=annotator_id_vs_name[int(anns)]
-                key_annotator_label=name_annotator+"_"+labels
+    for annotator_id, setlabels in dict_tango.items():
+        for label in setlabels:
+            if "message" in label:
+
+                key_hash_label = hash + "@" + label
+                if label in dict_bravo_hash_messageLevelLabel_vs_annotatorId:
+
+                    current=dict_bravo_hash_messageLevelLabel_vs_annotatorId[label]
+                    current.append(annotator_id)
+                    dict_bravo_hash_messageLevelLabel_vs_annotatorId[key_hash_label]=current
+                else:
+                    dict_bravo_hash_messageLevelLabel_vs_annotatorId[key_hash_label] = [annotator_id]
+
+
+                name_annotator=annotator_id_vs_name[int(annotator_id)]
+                key_annotator_label= name_annotator +"_" + label
                 if key_annotator_label in annotator_message_label_vs_count:
                     current_value=annotator_message_label_vs_count[key_annotator_label]
                     annotator_message_label_vs_count[key_annotator_label]  =current_value+1
                 else:
                     annotator_message_label_vs_count[key_annotator_label]=1
-for k,v in annotator_message_label_vs_count.items():
-    print(f"{k}:{v}")
+#
+# print(f"message level label count overall (doesnt reflect per email matched or not)")
+# for k,v in annotator_message_label_vs_count.items():
+#     print(f" {k}:{v}")
+
+
+print(f"message level label per email")
+for k,v in dict_bravo_hash_messageLevelLabel_vs_annotatorId.items():
+    if len(v)<2:
+        split_key=k.split("@")
+        email_hash=split_key[0]
+        label=split_key[1]
+        annotator_id=v[0]
+        annotator_name=annotator_id_vs_name[int(annotator_id)]
+        print(f" For email with hash {email_hash} only {annotator_name} annotated the label {label}")
 
         
 
