@@ -11,7 +11,7 @@ annotators_annotations = {}
 annotator1Idx = 0
 annotator2Idx = 0
 annotator1_name="uma"
-annotator2_name="zow"
+annotator2_name="zoe"
 
 with open("/Users/mitch/research/piranha/prodigy-tools/datasets/apwg_annotated_data_oct10th2022.jsonl", 'r') as f:
     Lines = f.readlines()
@@ -26,10 +26,10 @@ with open("/Users/mitch/research/piranha/prodigy-tools/datasets/apwg_annotated_d
         if 'spans' in entry:
             if "_annotator_id" in entry:
                 if annotator1_name in entry['_annotator_id'] :
-                    annotators_annotations[annotator1_name+str(email_hash)] = entry['spans']
+                    annotators_annotations[annotator1_name+"_"+str(email_hash)] = entry['spans']
                     annotator1Idx += 1
                 elif  annotator2_name in entry['_annotator_id'] :
-                    annotators_annotations[annotator2_name+str(email_hash)] = entry['spans']
+                    annotators_annotations[annotator2_name+"_"+str(email_hash)] = entry['spans']
                     annotator2Idx += 1
 
 
@@ -48,7 +48,7 @@ for key in annotators_annotations:
     else:
         emails_annotators_list[email_hash] = [name]
 
-#print(emails_annotators_list)
+print(emails_annotators_list)
 
 intersecting_annotations = {}
 
@@ -60,7 +60,7 @@ for email_hash in emails_annotators_list:
             intersecting_annotations[email_hash+'_'+str(startIdx)] = notes
             startIdx += 1
 
-#print(intersecting_annotations)
+print(intersecting_annotations)
 
 total_annotations = {}
 
@@ -71,17 +71,17 @@ for email_hash in emails_annotators_list:
         total_annotations[email_hash+'_'+str(startIdx)] = notes
         startIdx += 1
 
-#print(total_annotations)
+print(total_annotations)
 
 
-with open("C:\\Users\\neele\\PIRANHA\\email_hash_lookup.json", 'w') as out:
-    json.dump(emails, out, indent=4)
-
-with open("C:\\Users\\neele\\PIRANHA\\intersecting_annotations_ta3_mitch_neel.json", 'w') as out:
-    json.dump(intersecting_annotations, out, indent=4)
-
-with open("C:\\Users\\neele\\PIRANHA\\total_annotations_mitch_neel.json", 'w') as out:
-    json.dump(total_annotations, out, indent=4)
+# with open("C:\\Users\\neele\\PIRANHA\\email_hash_lookup.json", 'w') as out:
+#     json.dump(emails, out, indent=4)
+#
+# with open("C:\\Users\\neele\\PIRANHA\\intersecting_annotations_ta3_mitch_neel.json", 'w') as out:
+#     json.dump(intersecting_annotations, out, indent=4)
+#
+# with open("C:\\Users\\neele\\PIRANHA\\total_annotations_mitch_neel.json", 'w') as out:
+#     json.dump(total_annotations, out, indent=4)
 
 combined_annotations = {}
 
@@ -100,6 +100,13 @@ for e_hash_count in intersecting_annotations:
 
 print(combined_annotations)
 
+track_labels_per_email={}
+for k,v in intersecting_annotations:
+    splits=k.split("_")
+    hash=splits[0]
+    anotattor=splits[1]
+    if anotattor in track_labels_per_email:
+        track_labels_per_email
 
 
 # for annotation in annotations:
