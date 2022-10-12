@@ -101,12 +101,39 @@ for e_hash_count in intersecting_annotations:
 print(combined_annotations)
 
 track_labels_per_email={}
-for k,v in intersecting_annotations:
+email_hash_vs_bothannotatorlabelset={}
+
+for k,v in intersecting_annotations.items():
+    splits = k.split("_")
+    hash = splits[0]
+    anotattor = splits[1]
+    labels_this_annotator=[]
+    for entry in v:
+        if "label" in entry:
+            labels_this_annotator.append(entry["label"])
+    email_hash_vs_bothannotatorlabelset[hash]=set(labels_this_annotator)
+
+
+for k,v in intersecting_annotations.items():
     splits=k.split("_")
     hash=splits[0]
     anotattor=splits[1]
-    if anotattor in track_labels_per_email:
-        track_labels_per_email
+    flag_am_second_annotator=False
+    if hash in email_vs_annotator:
+        existing_annotator_id=email_vs_annotator[hash]
+        if existing_annotator_id!=  anotattor :
+            flag_am_second_annotator=True
+    for entry in v:
+        if "label" in entry:
+            if anotattor in track_labels_per_email:
+                current=track_labels_per_email[anotattor]
+                current.append(entry["label"])
+                track_labels_per_email[anotattor]=current
+            else:
+                track_labels_per_email[anotattor]=[entry["label"]]
+
+
+
 
 
 # for annotation in annotations:
