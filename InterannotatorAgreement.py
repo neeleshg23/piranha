@@ -13,10 +13,21 @@ annotator2Idx = 0
 annotator1_name="neel"
 annotator2_name="uma"
 
+#final output print should look like- of all emails
+# no of emails both annotated:
+count_emails_both_annotated=0
+# no of labels annotator1 annotated:
+count_labels_annotated_by_annotator1=0
+# no of emails annotator2 annotated:
+count_labels_annotated_by_annotator2=0
+# no of labels both got right
+count_labels_intersection=0
+labels_per_email=0
+cumulative_of_per_email_agreement=0
 annotator_id_vs_name={1:annotator1_name, 2:annotator2_name}
 
 
-with open("/Users/mitch/research/piranha/prodigy-tools/datasets/apwg_annotated_data_oct10th2022.jsonl", 'r') as f:
+with open("/Users/mithunpaul/research_code/isi/annotated_data/apwg_annotated_data_oct13th2022.jsonl", 'r') as f:
     Lines = f.readlines()
     for line in Lines:
         entry = json.loads(line)
@@ -163,6 +174,46 @@ for k,v in dict_bravo_hash_messageLevelLabel_vs_annotatorId.items():
 
 
 
+labels_per_email=0
+count_emails_both=0
+email_hash_labels_annotator1={}
+
+#for annotations by each annotator, check if his label was annotated by the second guy also
+for e_hash_count in intersecting_annotations.keys():
+    ehasharr = e_hash_count.split('_')
+    email_hash = ehasharr[0]
+    annotatorNum = ehasharr[1]
+
+
+    #if the email hash already existsin the dictionary
+    if email_hash in email_hash_labels_annotator1:
+        #get the labels by first guy
+        set_labels_annotator1 = email_hash_labels_annotator1[email_hash]
+        #then go get the labels by second guy
+        labels_annotator1 = []
+        # find the list of labels annotated by this guy
+        for each_annotation in intersecting_annotations[e_hash_count]:
+            labels_annotator1.append(each_annotation["label"])
+        count_labels_annotated_by_annotator1 += len(labels_annotator1)
+        labels_annotator2_set = set(labels_annotator1)
+
+        #find intersection-print
+        count_labels_intersection+= len(labels_annotator2_set.intersection(set_labels_annotator1))
+        labels_per_email+= max(len(labels_annotator2_set),len(set_labels_annotator1))
+        cumulative_of_per_email_agreement += (count_labels_intersection/labels_per_email)
+        count_emails_both+=1
+    else:
+        labels_annotator2=[]
+        #find the list of labels annotated by this guy
+        for each_annotation in intersecting_annotations[e_hash_count]:
+            labels_annotator2.append(each_annotation["label"])
+        count_labels_annotated_by_annotator2 += len(labels_annotator2)
+        labels_annotator2_set=set(labels_annotator2)
+        email_hash_labels_annotator1[email_hash]=labels_annotator2_set
+
+percentage_v1=count_labels_intersection/labels_per_email
+percentage_v2=cumulative_of_per_email_agreement/count_emails_both
+count_emails_both_annotated=len(email_hash_labels_annotator1)
   
 
 
