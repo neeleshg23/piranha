@@ -10,8 +10,10 @@ emails = {}
 annotators_annotations = {}
 annotator1Idx = 0
 annotator2Idx = 0
-annotator1_name="neel"
+annotator1_name="zoe"
 annotator2_name="uma"
+#what kind of label would you like to know more inter annotator details about [message,sentence, token]
+label_stub="message"
 
 #final output print should look like- of all emails
 # no of emails both annotated:
@@ -25,9 +27,10 @@ count_labels_intersection=0
 labels_per_email=0
 cumulative_of_per_email_agreement=0
 annotator_id_vs_name={1:annotator1_name, 2:annotator2_name}
+hash_vs_text={}
 
-
-with open("/Users/mithunpaul/research_code/isi/annotated_data/apwg_annotated_data_oct13th2022.jsonl", 'r') as f:
+print(f" Analysis of annotations between {annotator2_name} vs {annotator1_name}")
+with open("/Users/mithunpaul/research_code/isi/annotated_data/ta3_reloading_oct18th_message_level_annotated_3annotators_oct21st_extraction.jsonl", 'r') as f:
     Lines = f.readlines()
     for line in Lines:
         entry = json.loads(line)
@@ -45,6 +48,10 @@ with open("/Users/mithunpaul/research_code/isi/annotated_data/apwg_annotated_dat
                 elif  annotator2_name in entry['_annotator_id'] :
                     annotators_annotations[annotator2_name+"_"+str(email_hash)] = entry['spans']
                     annotator2Idx += 1
+
+# for hash,text in (emails.items()):
+#     print(f"hash:{hash}\ntext:{text}\n****************************")
+#     #print("\n")
 
 
 
@@ -71,7 +78,6 @@ for email_hash in emails_annotators_list:
             notes = annotators_annotations[name+'_'+email_hash]
             intersecting_annotations[email_hash+'_'+str(startIdx)] = notes
             startIdx += 1
-
 
 total_annotations = {}
 
@@ -135,8 +141,7 @@ dict_bravo_hash_messageLevelLabel_vs_annotatorId={}
 for hash,dict_tango in email_hash_vs_bothannotatorlabelset.items():
     for annotator_id, setlabels in dict_tango.items():
         for label in setlabels:
-            if "message" in label:
-
+            if label_stub  in label:
                 key_hash_label = hash + "@" + label
                 if label in dict_bravo_hash_messageLevelLabel_vs_annotatorId:
 
@@ -154,13 +159,12 @@ for hash,dict_tango in email_hash_vs_bothannotatorlabelset.items():
                     annotator_message_label_vs_count[key_annotator_label]  =current_value+1
                 else:
                     annotator_message_label_vs_count[key_annotator_label]=1
-#
-# print(f"message level label count overall (doesnt reflect per email matched or not)")
+# print(f"{label_stub} level label count overall (doesnt reflect per email matched or not)")
 # for k,v in annotator_message_label_vs_count.items():
 #     print(f" {k}:{v}")
 
 
-print(f"message level label per email")
+print(f"-------------------------\n{label_stub} label per email")
 for k,v in dict_bravo_hash_messageLevelLabel_vs_annotatorId.items():
     if len(v)<2:
         split_key=k.split("@")
@@ -168,7 +172,7 @@ for k,v in dict_bravo_hash_messageLevelLabel_vs_annotatorId.items():
         label=split_key[1]
         annotator_id=v[0]
         annotator_name=annotator_id_vs_name[int(annotator_id)]
-        print(f" For email with hash {email_hash} only {annotator_name} annotated the label {label}")
+        #print(f" For email with hash {email_hash} only {annotator_name} annotated the label {label}")
 
         
 
@@ -211,13 +215,17 @@ for e_hash_count in intersecting_annotations.keys():
         labels_annotator2_set=set(labels_annotator2)
         email_hash_labels_annotator1[email_hash]=labels_annotator2_set
 
-percentage_v1=count_labels_intersection/labels_per_email
-percentage_v2=cumulative_of_per_email_agreement/count_emails_both
-count_emails_both_annotated=len(email_hash_labels_annotator1)
-  
+
+if len(intersecting_annotations.keys())==0:
+    print("no common emails annotated between the given annotators")
+else:
+    percentage_v1=count_labels_intersection/labels_per_email
+    percentage_v2=cumulative_of_per_email_agreement/count_emails_both
+    count_emails_both_annotated=len(email_hash_labels_annotator1)
 
 
 
+    print(f"f{percentage_v1},{percentage_v2}")
 
 
 
