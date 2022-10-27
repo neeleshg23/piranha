@@ -30,7 +30,7 @@ annotator_id_vs_name={1:annotator1_name, 2:annotator2_name}
 hash_vs_text={}
 
 print(f" Analysis of annotations between {annotator2_name} vs {annotator1_name}")
-with open("/Users/mithunpaul/research_code/isi/annotated_data/ta3_reloading_oct18th_message_level_annotated_3annotators_oct21st_extraction.jsonl", 'r') as f:
+with open("/Users/mitch/research/piranha/annotated_datasets/ta3_reloading_oct18th_message_level_annotated_3annotators_oct26th_extraction.jsonl", 'r') as f:
     Lines = f.readlines()
     for line in Lines:
         entry = json.loads(line)
@@ -48,10 +48,10 @@ with open("/Users/mithunpaul/research_code/isi/annotated_data/ta3_reloading_oct1
                 elif  annotator2_name in entry['_annotator_id'] :
                     annotators_annotations[annotator2_name+"_"+str(email_hash)] = entry['spans']
                     annotator2Idx += 1
-
+#
 # for hash,text in (emails.items()):
 #     print(f"hash:{hash}\ntext:{text}\n****************************")
-#     #print("\n")
+#     print("\n")
 
 
 
@@ -172,7 +172,7 @@ for k,v in dict_bravo_hash_messageLevelLabel_vs_annotatorId.items():
         label=split_key[1]
         annotator_id=v[0]
         annotator_name=annotator_id_vs_name[int(annotator_id)]
-        #print(f" For email with hash {email_hash} only {annotator_name} annotated the label {label}")
+        # print(f" For email with hash {email_hash} only {annotator_name} annotated the label {label}")
 
         
 
@@ -223,9 +223,12 @@ else:
     percentage_v2=cumulative_of_per_email_agreement/count_emails_both
     count_emails_both_annotated=len(email_hash_labels_annotator1)
 
-
-
-    print(f"f{percentage_v1},{percentage_v2}")
+    print(f"total labels_per_email:{labels_per_email}")
+    print(f"count_labels_intersection:{count_labels_intersection}")
+    print(f"{percentage_v1},")
+    print(f"cumulative_of_per_email_agreement:{cumulative_of_per_email_agreement}")
+    print(f"count_emails_both:{count_emails_both}")
+    print(f"{percentage_v2},")
 
 
 
