@@ -3,6 +3,7 @@
 # Check how many of the annotations agree between annotators
 
 import json
+import sys
 
 numAnnotators = 2
 emailAnnotatorsCount = {}
@@ -177,7 +178,9 @@ for hash,dict_tango in email_hash_vs_bothannotatorlabelset.items():
 # for k,v in annotator_message_label_vs_count.items():
 #     print(f" {k}:{v}")
 
-
+if len(dict_bravo_hash_messageLevelLabel_vs_annotatorId.items())==0:
+    print(f"No messages for the given label stub {label_stub}")
+    sys.exit(1)
 print(f"-------------------------\n{label_stub} label per email")
 for k,v in dict_bravo_hash_messageLevelLabel_vs_annotatorId.items():
     if len(v)<2:
@@ -275,7 +278,7 @@ else:
     print(f"cumulative_of_per_email_agreement:{cumulative_of_per_email_agreement}")
     print(f"count_emails_both:{count_emails_both}")
     print(f"{percentage_v2},")
-    print(f"average kappa cohen score{cohen_kappa_score_overall/count_emails_both},")
+    print(f"average kappa cohen score={cohen_kappa_score_overall/count_emails_both},")
 
 
 
