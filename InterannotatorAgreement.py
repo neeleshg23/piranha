@@ -13,7 +13,7 @@ annotator2Idx = 0
 annotator1_name="zoe"
 annotator2_name="uma"
 #what kind of label would you like to know more inter annotator details about [message,sentence, token]
-label_stub="message"
+label_stub="sentence"
 
 #final output print should look like- of all emails
 # no of emails both annotated:
@@ -30,18 +30,22 @@ annotator_id_vs_name={1:annotator1_name, 2:annotator2_name}
 hash_vs_text={}
 
 print(f" Analysis of annotations between {annotator2_name} vs {annotator1_name}")
-with open("/Users/mithunpaul/research_code/isi/annotated_data/ta3_reloading_oct18th_message_level_annotated_3annotators_oct21st_extraction.jsonl", 'r') as f:
+with open("/Users/mithunpaul/research_code/isi/annotated_data/ta3_reloading_oct18th_message_level_annotated_3annotators_oct26th_extraction.jsonl", 'r') as f:
     Lines = f.readlines()
     for line in Lines:
         entry = json.loads(line)
         email_hash = entry['_input_hash']
+        if email_hash == int("1767252249"):
+            pass
         if email_hash in emailAnnotatorsCount:
             emailAnnotatorsCount[email_hash] += 1
         else:
             emailAnnotatorsCount[email_hash] = 1
         emails[email_hash] = entry['text']
+
         if 'spans' in entry:
             if "_annotator_id" in entry:
+
                 if annotator1_name in entry['_annotator_id'] :
                     annotators_annotations[annotator1_name+"_"+str(email_hash)] = entry['spans']
                     annotator1Idx += 1
@@ -58,10 +62,13 @@ with open("/Users/mithunpaul/research_code/isi/annotated_data/ta3_reloading_oct1
 emails_annotators_list = {}
 
 for key in annotators_annotations:
+
     notes = annotators_annotations[key]
     keyarr = key.split('_')
     name = keyarr[0]
     email_hash = keyarr[1]
+    if email_hash == "1767252249":
+        pass
     if email_hash in emails_annotators_list:
         emails_annotators_list[email_hash].append(name)
     else:
@@ -72,6 +79,8 @@ for key in annotators_annotations:
 intersecting_annotations = {}
 
 for email_hash in emails_annotators_list:
+    if email_hash =="1767252249":
+        pass
     if len(emails_annotators_list[email_hash]) == 2: #numAnnotators:
         startIdx = 1
         for name in emails_annotators_list[email_hash]:
@@ -172,7 +181,7 @@ for k,v in dict_bravo_hash_messageLevelLabel_vs_annotatorId.items():
         label=split_key[1]
         annotator_id=v[0]
         annotator_name=annotator_id_vs_name[int(annotator_id)]
-        #print(f" For email with hash {email_hash} only {annotator_name} annotated the label {label}")
+        print(f" For email with hash {email_hash} only {annotator_name} annotated the label {label}")
 
         
 
@@ -222,9 +231,6 @@ else:
     percentage_v1=count_labels_intersection/labels_per_email
     percentage_v2=cumulative_of_per_email_agreement/count_emails_both
     count_emails_both_annotated=len(email_hash_labels_annotator1)
-
-
-
     print(f"f{percentage_v1},{percentage_v2}")
 
 
