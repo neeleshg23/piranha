@@ -11,10 +11,10 @@ emails = {}
 annotators_annotations = {}
 annotator1Idx = 0
 annotator2Idx = 0
-annotator1_name="uma"
-annotator2_name="neel"
+annotator1_name="zoe"
+annotator2_name="uma"
 #what kind of label would you like to know more inter annotator details about [message,sentence, token]
-label_stub="sentence"
+label_stub="message"
 
 #final output print should look like- of all emails
 # no of emails both annotated:
@@ -247,13 +247,14 @@ for e_hash_count in intersecting_annotations.keys():
         count_labels_intersection+= len(labels_annotator2_set.intersection(set_labels_annotator1))
         labels_per_email+= max(len(labels_annotator2_set),len(set_labels_annotator1))
         cumulative_of_per_email_agreement += (count_labels_intersection/labels_per_email)
-        if(len(labels_annotator1)==len(labels_annotator2)==1):
-            if labels_annotator1[0]==labels_annotator2[0]:
-                cohen_kappa_score_overall +=1
-                count_emails_both+=1
+        count_emails_both += 1
+        if(len(labels_annotator2_set)==1 or len(set_labels_annotator1)==1):
+            labels_annotator2_set==set_labels_annotator1
+            cohen_kappa_score_overall +=1
+
         else:
-            cohen_kappa_score_overall+=cohen_kappa(sorted(labels_annotator1),sorted(labels_annotator2))
-            count_emails_both+=1
+            cohen_kappa_score_overall+=cohen_kappa(sorted(labels_annotator2_set),sorted(set_labels_annotator1))
+
     else:
         labels_annotator2=[]
         #find the list of labels annotated by this guy
