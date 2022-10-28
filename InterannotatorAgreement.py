@@ -190,12 +190,36 @@ for k,v in dict_bravo_hash_messageLevelLabel_vs_annotatorId.items():
         print(f" For email with hash {email_hash} only {annotator_name} annotated the label {label}")
 
         
+def cohen_kappa(ann1, ann2):
+    """Computes Cohen kappa for pair-wise annotators.
+    :param ann1: annotations provided by first annotator
+    :type ann1: list
+    :param ann2: annotations provided by second annotator
+    :type ann2: list
+    :rtype: float
+    :return: Cohen kappa statistic
+    """
+    count = 0
+    for an1, an2 in zip(ann1, ann2):
+        if an1 == an2:
+            count += 1
+    A = count / len(ann1)  # observed agreement A (Po)
 
+    uniq = set(ann1 + ann2)
+    E = 0  # expected agreement E (Pe)
+    for item in uniq:
+        cnt1 = ann1.count(item)
+        cnt2 = ann2.count(item)
+        count = ((cnt1 / len(ann1)) * (cnt2 / len(ann2)))
+        E += count
+
+    return round((A - E) / (1 - E), 4)
 
 
 labels_per_email=0
 count_emails_both=0
 email_hash_labels_annotator1={}
+cohen_kappa_score_overall=0
 
 #for annotations by each annotator, check if his label was annotated by the second guy also
 for e_hash_count in intersecting_annotations.keys():
@@ -220,7 +244,13 @@ for e_hash_count in intersecting_annotations.keys():
         count_labels_intersection+= len(labels_annotator2_set.intersection(set_labels_annotator1))
         labels_per_email+= max(len(labels_annotator2_set),len(set_labels_annotator1))
         cumulative_of_per_email_agreement += (count_labels_intersection/labels_per_email)
-        count_emails_both+=1
+        if(len(labels_annotator1)==len(labels_annotator2)==1):
+            if labels_annotator1[0]==labels_annotator2[0]:
+                cohen_kappa_score_overall +=1
+                count_emails_both+=1
+        else:
+            cohen_kappa_score_overall+=cohen_kappa(sorted(labels_annotator1),sorted(labels_annotator2))
+            count_emails_both+=1
     else:
         labels_annotator2=[]
         #find the list of labels annotated by this guy
@@ -245,6 +275,7 @@ else:
     print(f"cumulative_of_per_email_agreement:{cumulative_of_per_email_agreement}")
     print(f"count_emails_both:{count_emails_both}")
     print(f"{percentage_v2},")
+    print(f"average kappa cohen score{cohen_kappa_score_overall/count_emails_both},")
 
 
 
