@@ -11,10 +11,10 @@ emails = {}
 annotators_annotations = {}
 annotator1Idx = 0
 annotator2Idx = 0
-annotator1_name="neel"
-annotator2_name="zoe"
+annotator1_name="uma"
+annotator2_name="neel"
 #what kind of label would you like to know more inter annotator details about [message,sentence, token]
-label_stub="word"
+label_stub="message"
 
 flag_print_hashes_text_emails=False
 flag_show_kappa_cohen=True
@@ -222,9 +222,6 @@ def get_label_stub_labels_only(label_stub,labels_this_annotator):
     return list_labels_annotator2_shortlist_with_stub_label
         #workhorse: for annotations by each annotator, check if his label was annotated by the second guy also
 for index, hash_annotator_id in enumerate(intersecting_annotations.keys()):
-    print(index)
-    if(index==207):
-        pass
     ehasharr = hash_annotator_id.split('_')
     email_hash = ehasharr[0]
     annotatorNum = ehasharr[1]
@@ -247,9 +244,9 @@ for index, hash_annotator_id in enumerate(intersecting_annotations.keys()):
             #labels_annotator2_set = set(labels_annotator1)
 
             #find intersection-print
-            # count_labels_intersection+= len(labels_annotator2_set.intersection(set_labels_annotator1))
-            # labels_per_email+= max(len(labels_annotator2_set),len(set_labels_annotator1))
-            # cumulative_of_per_email_agreement += (count_labels_intersection/labels_per_email)
+            count_labels_intersection+= len(set(list_labels_annotator1_shortlist_with_stub_label).intersection(set(list_labels_annotator2_shortlist_with_stub_label)))
+            labels_per_email+= max(len(set(list_labels_annotator1_shortlist_with_stub_label)),len(set(list_labels_annotator2_shortlist_with_stub_label)))
+            cumulative_of_per_email_agreement += (count_labels_intersection/labels_per_email)
             count_emails_both += 1
             if(flag_show_kappa_cohen==True):
 
@@ -293,17 +290,20 @@ for index, hash_annotator_id in enumerate(intersecting_annotations.keys()):
 if len(intersecting_annotations.keys())==0:
     print("no common emails annotated between the given annotators")
 else:
-    # percentage_v1=count_labels_intersection/labels_per_email
-    # percentage_v2=cumulative_of_per_email_agreement/count_emails_both
-    # count_emails_both_annotated=len(email_hash_labels_annotator)
-    #
+    percentage_v1=count_labels_intersection/labels_per_email
+    percentage_v2=cumulative_of_per_email_agreement/count_emails_both
+    count_emails_both_annotated=len(email_hash_labels_annotator)
+
     #
     # print(f"total labels_per_email:{labels_per_email}")
     # print(f"count_labels_intersection:{count_labels_intersection}")
-    # print(f"{percentage_v1},")
-    # print(f"cumulative_of_per_email_agreement:{cumulative_of_per_email_agreement}")
     # print(f"count_emails_both:{count_emails_both}")
-    # print(f"{percentage_v2},")
+    # print(f"cumulative_of_per_email_agreement:{cumulative_of_per_email_agreement}")
+    #
+    print(f"percentage_v1={percentage_v1},")
+
+
+    print(f"percentage_v2={percentage_v2},")
     print(f"average kappa cohen score={cohen_kappa_score_overall/count_emails_both},")
 
 
