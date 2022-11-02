@@ -95,7 +95,7 @@ for key in annotators_annotations:
 
 
 intersecting_annotations = {}
-
+#now separate out each email hash with labels annotated by _1 and annotated _2. this will be stored in intersecting_annotations
 for email_hash in emails_annotators_list:
     if len(emails_annotators_list[email_hash]) == 2: #numAnnotators:
         startIdx = 1
@@ -103,33 +103,6 @@ for email_hash in emails_annotators_list:
             notes = annotators_annotations[name+'_'+email_hash]
             intersecting_annotations[email_hash+'_'+str(startIdx)] = notes
             startIdx += 1
-
-total_annotations = {}
-
-for email_hash in emails_annotators_list:
-    startIdx = 1
-    for name in emails_annotators_list[email_hash]:
-        notes = annotators_annotations[name+'_'+email_hash]
-        total_annotations[email_hash+'_'+str(startIdx)] = notes
-        startIdx += 1
-
-
-
-#
-# combined_annotations = {}
-#
-# for e_hash_count in intersecting_annotations:
-#     ehasharr = e_hash_count.split('_')
-#     email_hash = ehasharr[0]
-#     annotatorNum = ehasharr[1]
-#     for note in intersecting_annotations[e_hash_count]:
-#         del note['start']
-#         del note['end']
-#         data = [(note['token_start'], note['token_end'], note['label'])]
-#         if email_hash in combined_annotations:
-#             combined_annotations[email_hash].append(data)
-#         else:
-#             combined_annotations[email_hash] = data
 
 track_labels_per_email={}
 
@@ -160,21 +133,21 @@ for k,v in intersecting_annotations.items():
 
 
 annotator_message_label_vs_count={}
-dict_bravo_hash_messageLevelLabel_vs_annotatorId={}
+dict_hash_messageLevelLabel_vs_annotatorId={}
 
 #go through each of the email vs annotator set labels and see if there is a label_stub*
-for hash,dict_tango in email_hash_vs_bothannotatorlabelset.items():
-    for annotator_id, setlabels in dict_tango.items():
+for hash,dict_email_hash_label_set in email_hash_vs_bothannotatorlabelset.items():
+    for annotator_id, setlabels in dict_email_hash_label_set.items():
         for label in setlabels:
             if label_stub  in label:
                 key_hash_label = hash + "@" + label
-                if label in dict_bravo_hash_messageLevelLabel_vs_annotatorId:
+                if label in dict_hash_messageLevelLabel_vs_annotatorId:
 
-                    current=dict_bravo_hash_messageLevelLabel_vs_annotatorId[label]
+                    current=dict_hash_messageLevelLabel_vs_annotatorId[label]
                     current.append(annotator_id)
-                    dict_bravo_hash_messageLevelLabel_vs_annotatorId[key_hash_label]=current
+                    dict_hash_messageLevelLabel_vs_annotatorId[key_hash_label]=current
                 else:
-                    dict_bravo_hash_messageLevelLabel_vs_annotatorId[key_hash_label] = [annotator_id]
+                    dict_hash_messageLevelLabel_vs_annotatorId[key_hash_label] = [annotator_id]
 
 
                 name_annotator=annotator_id_vs_name[int(annotator_id)]
@@ -188,11 +161,11 @@ for hash,dict_tango in email_hash_vs_bothannotatorlabelset.items():
 # for k,v in annotator_message_label_vs_count.items():
 #     print(f" {k}:{v}")
 
-if len(dict_bravo_hash_messageLevelLabel_vs_annotatorId.items())==0:
+if len(dict_hash_messageLevelLabel_vs_annotatorId.items())==0:
     print(f"No messages for the given label stub {label_stub}")
     sys.exit(1)
 print(f"-------------------------\n{label_stub} label per email")
-for k,v in dict_bravo_hash_messageLevelLabel_vs_annotatorId.items():
+for k,v in dict_hash_messageLevelLabel_vs_annotatorId.items():
     if len(v)<2:
         split_key=k.split("@")
         email_hash=split_key[0]
