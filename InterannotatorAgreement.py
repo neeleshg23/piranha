@@ -11,10 +11,14 @@ emails = {}
 annotators_annotations = {}
 annotator1Idx = 0
 annotator2Idx = 0
-annotator1_name="zoe"
-annotator2_name="uma"
+annotator1_name="uma"
+annotator2_name="neel"
 #what kind of label would you like to know more inter annotator details about [message,sentence, token]
-label_stub="message"
+label_stub="word"
+
+flag_print_hashes_text_emails=False
+flag_show_kappa_cohen=True
+flag_show_per_person_labels_missed=False
 
 #final output print should look like- of all emails
 # no of emails both annotated:
@@ -32,7 +36,7 @@ hash_vs_text={}
 
 print(f" Analysis of  {label_stub} level labels annotations between {annotator2_name} vs {annotator1_name}")
 #laptop
-with open("/Users/mithunpaul/research_code/isi/annotated_data/ta3_reloading_oct18th_message_level_annotated_3annotators_oct26th_extraction.jsonl", 'r') as f:
+with open("/Users/mithunpaul/research_code/isi/annotated_data/annotated_enron_retreived_using534_annotations_sep20th2022.jsonl", 'r') as f:
 
 #server
 #with open("/Users/mitch/research/piranha/annotated_datasets/ta3_reloading_oct18th_message_level_annotated_3annotators_oct26th_extraction.jsonl", 'r') as f:
@@ -189,8 +193,7 @@ for k,v in dict_bravo_hash_messageLevelLabel_vs_annotatorId.items():
         label=split_key[1]
         annotator_id=v[0]
         annotator_name=annotator_id_vs_name[int(annotator_id)]
-
-        print(f" For email with hash {email_hash} only {annotator_name} annotated the label {label}")
+        #print(f" For email with hash {email_hash} only {annotator_name} annotated the label {label}")
 
         
 def cohen_kappa(ann1, ann2):
@@ -248,12 +251,12 @@ for e_hash_count in intersecting_annotations.keys():
         labels_per_email+= max(len(labels_annotator2_set),len(set_labels_annotator1))
         cumulative_of_per_email_agreement += (count_labels_intersection/labels_per_email)
         count_emails_both += 1
-        if(len(labels_annotator2_set)==1 or len(set_labels_annotator1)==1):
-            labels_annotator2_set==set_labels_annotator1
-            cohen_kappa_score_overall +=1
-
-        else:
-            cohen_kappa_score_overall+=cohen_kappa(sorted(labels_annotator2_set),sorted(set_labels_annotator1))
+        if(flag_show_kappa_cohen==True):
+            if(len(labels_annotator2_set)==1 or len(set_labels_annotator1)==1):
+                labels_annotator2_set==set_labels_annotator1
+                cohen_kappa_score_overall +=1
+            else:
+                cohen_kappa_score_overall+=cohen_kappa(sorted(labels_annotator2_set),sorted(set_labels_annotator1))
 
     else:
         labels_annotator2=[]
