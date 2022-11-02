@@ -11,8 +11,8 @@ emails = {}
 annotators_annotations = {}
 annotator1Idx = 0
 annotator2Idx = 0
-annotator1_name="uma"
-annotator2_name="neel"
+annotator1_name="zoe"
+annotator2_name="uma"
 #what kind of label would you like to know more inter annotator details about [message,sentence, token]
 label_stub="word"
 
@@ -34,8 +34,15 @@ cumulative_of_per_email_agreement=0
 annotator_id_vs_name={1:annotator1_name, 2:annotator2_name}
 hash_vs_text={}
 
+
+
 print(f" Analysis of  {label_stub} level labels annotations between {annotator2_name} vs {annotator1_name}")
+
+
+#separate out emails annotated by annotator1_name and annotator2_name
 #laptop
+
+
 with open("/Users/mithunpaul/research_code/isi/annotated_data/annotated_enron_retreived_using534_annotations_sep20th2022.jsonl", 'r') as f:
 
 #server
@@ -70,9 +77,10 @@ with open("/Users/mithunpaul/research_code/isi/annotated_data/annotated_enron_re
 
 
 emails_annotators_list = {}
-
+#by now annotators_annotations will contain only those of 2 required annotators
+#then take each email hash and find the number of people who annotated this and store it in emails_annotators_list.
+# Rather, if its just one of the 2 annotators or both. This is useful in finding intersecting annotaions
 for key in annotators_annotations:
-
     notes = annotators_annotations[key]
     keyarr = key.split('_')
     name = keyarr[0]
@@ -89,8 +97,6 @@ for key in annotators_annotations:
 intersecting_annotations = {}
 
 for email_hash in emails_annotators_list:
-    if email_hash =="1767252249":
-        pass
     if len(emails_annotators_list[email_hash]) == 2: #numAnnotators:
         startIdx = 1
         for name in emails_annotators_list[email_hash]:
@@ -109,21 +115,21 @@ for email_hash in emails_annotators_list:
 
 
 
-
-combined_annotations = {}
-
-for e_hash_count in intersecting_annotations:
-    ehasharr = e_hash_count.split('_')
-    email_hash = ehasharr[0]
-    annotatorNum = ehasharr[1]
-    for note in intersecting_annotations[e_hash_count]:
-        del note['start']
-        del note['end']
-        data = [(note['token_start'], note['token_end'], note['label'])]
-        if email_hash in combined_annotations:
-            combined_annotations[email_hash].append(data)
-        else:
-            combined_annotations[email_hash] = data
+#
+# combined_annotations = {}
+#
+# for e_hash_count in intersecting_annotations:
+#     ehasharr = e_hash_count.split('_')
+#     email_hash = ehasharr[0]
+#     annotatorNum = ehasharr[1]
+#     for note in intersecting_annotations[e_hash_count]:
+#         del note['start']
+#         del note['end']
+#         data = [(note['token_start'], note['token_end'], note['label'])]
+#         if email_hash in combined_annotations:
+#             combined_annotations[email_hash].append(data)
+#         else:
+#             combined_annotations[email_hash] = data
 
 track_labels_per_email={}
 
@@ -156,7 +162,7 @@ for k,v in intersecting_annotations.items():
 annotator_message_label_vs_count={}
 dict_bravo_hash_messageLevelLabel_vs_annotatorId={}
 
-#go through each of the email vs annotator set labels and see if there is a message_*
+#go through each of the email vs annotator set labels and see if there is a label_stub*
 for hash,dict_tango in email_hash_vs_bothannotatorlabelset.items():
     for annotator_id, setlabels in dict_tango.items():
         for label in setlabels:
@@ -227,8 +233,15 @@ count_emails_both=0
 email_hash_labels_annotator1={}
 cohen_kappa_score_overall=0
 
+#given a list and max number fill it with empty nodes to max lenght
+def fill_list_empty_nodes(list_name, max):
+    for x in range(max-len(list_name)):
+        list_name.append("")
+    return list_name
+
+
 #for annotations by each annotator, check if his label was annotated by the second guy also
-for e_hash_count in intersecting_annotations.keys():
+for index,e_hash_count in enumerate(intersecting_annotations.keys()):
     ehasharr = e_hash_count.split('_')
     email_hash = ehasharr[0]
     annotatorNum = ehasharr[1]
@@ -252,11 +265,24 @@ for e_hash_count in intersecting_annotations.keys():
         cumulative_of_per_email_agreement += (count_labels_intersection/labels_per_email)
         count_emails_both += 1
         if(flag_show_kappa_cohen==True):
-            if(len(labels_annotator2_set)==1 or len(set_labels_annotator1)==1):
-                labels_annotator2_set==set_labels_annotator1
-                cohen_kappa_score_overall +=1
+            #kappa cohen doesnt like different lenghts
+            # pass lists
+            #sort them
+            # if the lenght of lists are differnt, fill the smaller one with empty values
+
+            if(len(labels_annotator1) == len(labels_annotator2)==1):
+                cohen_kappa_score_overall += 1
             else:
-                cohen_kappa_score_overall+=cohen_kappa(sorted(labels_annotator2_set),sorted(set_labels_annotator1))
+                if(len(labels_annotator1) != len(labels_annotator2)):
+                    if len(labels_annotator1) > len(labels_annotator2):
+                        fill_list_empty_nodes(labels_annotator2,len(labels_annotator1))
+                    else:
+                        fill_list_empty_nodes(labels_annotator1, len(labels_annotator2))
+                    #this is a hack, if there is only one overlapping label in atleast one of the sets, just assign them both as same
+                    #labels_annotator2_set==set_labels_annotator1
+                    #cohen_kappa_score_overall += cohen_kappa(sorted(labels_annotator2_set), sorted(set_labels_annotator1))
+                    # cohen_kappa_score_overall +=1
+                cohen_kappa_score_overall+=cohen_kappa(sorted(labels_annotator1),sorted(labels_annotator2))
 
     else:
         labels_annotator2=[]
