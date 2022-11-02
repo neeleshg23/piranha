@@ -11,8 +11,8 @@ emails = {}
 annotators_annotations = {}
 annotator1Idx = 0
 annotator2Idx = 0
-annotator1_name="zoe"
-annotator2_name="uma"
+annotator1_name="neel"
+annotator2_name="zoe"
 #what kind of label would you like to know more inter annotator details about [message,sentence, token]
 label_stub="word"
 
@@ -134,12 +134,13 @@ for k,v in intersecting_annotations.items():
 
 annotator_message_label_vs_count={}
 dict_hash_messageLevelLabel_vs_annotatorId={}
-
+list_of_shortlisted_emails_with_this_label_stub=[]
 #go through each of the email vs annotator set labels and see if there is a label_stub*
 for hash,dict_email_hash_label_set in email_hash_vs_bothannotatorlabelset.items():
     for annotator_id, setlabels in dict_email_hash_label_set.items():
         for label in setlabels:
             if label_stub  in label:
+                list_of_shortlisted_emails_with_this_label_stub.append(hash)
                 key_hash_label = hash + "@" + label
                 if label in dict_hash_messageLevelLabel_vs_annotatorId:
 
@@ -203,84 +204,106 @@ def cohen_kappa(ann1, ann2):
 
 labels_per_email=0
 count_emails_both=0
-email_hash_labels_annotator1={}
+email_hash_labels_annotator={}
 cohen_kappa_score_overall=0
 
 #given a list and max number fill it with empty nodes to max lenght
 def fill_list_empty_nodes(list_name, max):
     for x in range(max-len(list_name)):
-        list_name.append("")
+        #adding a label zzz because earlier we were adding blank and after sorting, blank was coming first
+        list_name.append("zzzzzz")
     return list_name
 
-
-#for annotations by each annotator, check if his label was annotated by the second guy also
-for index,e_hash_count in enumerate(intersecting_annotations.keys()):
-    ehasharr = e_hash_count.split('_')
+def get_label_stub_labels_only(label_stub,labels_this_annotator):
+    list_labels_annotator2_shortlist_with_stub_label=[]
+    for labels in labels_this_annotator:
+        if label_stub in labels:
+            list_labels_annotator2_shortlist_with_stub_label.append(labels)
+    return list_labels_annotator2_shortlist_with_stub_label
+        #workhorse: for annotations by each annotator, check if his label was annotated by the second guy also
+for index, hash_annotator_id in enumerate(intersecting_annotations.keys()):
+    print(index)
+    if(index==207):
+        pass
+    ehasharr = hash_annotator_id.split('_')
     email_hash = ehasharr[0]
     annotatorNum = ehasharr[1]
 
+    #check if that email_hash exists in the shortlist with label_stub
+    if email_hash in list_of_shortlisted_emails_with_this_label_stub:
+    #if the email hash already existsin the dictionary- we know we are at the second annotator (we call him annotator1- that needs to change). if yes
+    # retrive the labels anotated bhy first guy which would hav ebeen stored in it by the else below.
+        if email_hash in email_hash_labels_annotator:
+            #get the labels by first guy- which was stored in the dictionary email_hash_labels_annotator by the else statement below
+            set_labels_annotator1 = email_hash_labels_annotator[email_hash]
+            #then go get the labels by second guy
+            labels_annotator1 = []
+            # find the list of labels annotated by this guy
+            for each_annotation in intersecting_annotations[hash_annotator_id]:
+                labels_annotator1.append(each_annotation["label"])
+            list_labels_annotator1_shortlist_with_stub_label=get_label_stub_labels_only(label_stub,labels_annotator1)
 
-    #if the email hash already existsin the dictionary
-    if email_hash in email_hash_labels_annotator1:
-        #get the labels by first guy
-        set_labels_annotator1 = email_hash_labels_annotator1[email_hash]
-        #then go get the labels by second guy
-        labels_annotator1 = []
-        # find the list of labels annotated by this guy
-        for each_annotation in intersecting_annotations[e_hash_count]:
-            labels_annotator1.append(each_annotation["label"])
-        count_labels_annotated_by_annotator1 += len(labels_annotator1)
-        labels_annotator2_set = set(labels_annotator1)
+            count_labels_annotated_by_annotator1 += len(list_labels_annotator1_shortlist_with_stub_label)
+            #labels_annotator2_set = set(labels_annotator1)
 
-        #find intersection-print
-        count_labels_intersection+= len(labels_annotator2_set.intersection(set_labels_annotator1))
-        labels_per_email+= max(len(labels_annotator2_set),len(set_labels_annotator1))
-        cumulative_of_per_email_agreement += (count_labels_intersection/labels_per_email)
-        count_emails_both += 1
-        if(flag_show_kappa_cohen==True):
-            #kappa cohen doesnt like different lenghts
-            # pass lists
-            #sort them
-            # if the lenght of lists are differnt, fill the smaller one with empty values
+            #find intersection-print
+            # count_labels_intersection+= len(labels_annotator2_set.intersection(set_labels_annotator1))
+            # labels_per_email+= max(len(labels_annotator2_set),len(set_labels_annotator1))
+            # cumulative_of_per_email_agreement += (count_labels_intersection/labels_per_email)
+            count_emails_both += 1
+            if(flag_show_kappa_cohen==True):
 
-            if(len(labels_annotator1) == len(labels_annotator2)==1):
-                cohen_kappa_score_overall += 1
-            else:
-                if(len(labels_annotator1) != len(labels_annotator2)):
-                    if len(labels_annotator1) > len(labels_annotator2):
-                        fill_list_empty_nodes(labels_annotator2,len(labels_annotator1))
-                    else:
-                        fill_list_empty_nodes(labels_annotator1, len(labels_annotator2))
-                    #this is a hack, if there is only one overlapping label in atleast one of the sets, just assign them both as same
-                    #labels_annotator2_set==set_labels_annotator1
-                    #cohen_kappa_score_overall += cohen_kappa(sorted(labels_annotator2_set), sorted(set_labels_annotator1))
-                    # cohen_kappa_score_overall +=1
-                cohen_kappa_score_overall+=cohen_kappa(sorted(labels_annotator1),sorted(labels_annotator2))
+                #kappa cohen fails for len=1
+                if(len(list_labels_annotator1_shortlist_with_stub_label) == len(list_labels_annotator2_shortlist_with_stub_label)):
+                    if ((list_labels_annotator1_shortlist_with_stub_label) == (
+                            list_labels_annotator2_shortlist_with_stub_label) ):
+                        cohen_kappa_score_overall += 1
+                else:
+                    # kappa cohen doesnt like different lenghts
+                    # pass lists
+                    # sort them
+                    # if the lenght of lists are differnt, fill the smaller one with junk values
 
-    else:
-        labels_annotator2=[]
-        #find the list of labels annotated by this guy
-        for each_annotation in intersecting_annotations[e_hash_count]:
-            labels_annotator2.append(each_annotation["label"])
-        count_labels_annotated_by_annotator2 += len(labels_annotator2)
-        labels_annotator2_set=set(labels_annotator2)
-        email_hash_labels_annotator1[email_hash]=labels_annotator2_set
+                    if(len(list_labels_annotator1_shortlist_with_stub_label) != len(list_labels_annotator2_shortlist_with_stub_label)):
+                        if len(list_labels_annotator1_shortlist_with_stub_label) > len(list_labels_annotator2_shortlist_with_stub_label):
+                            fill_list_empty_nodes(list_labels_annotator2_shortlist_with_stub_label,len(list_labels_annotator1_shortlist_with_stub_label))
+                        else:
+                            fill_list_empty_nodes(list_labels_annotator1_shortlist_with_stub_label, len(list_labels_annotator2_shortlist_with_stub_label))
+                        #this is a hack, if there is only one overlapping label in atleast one of the sets, just assign them both as same
+                        #labels_annotator2_set==set_labels_annotator1
+                        #cohen_kappa_score_overall += cohen_kappa(sorted(labels_annotator2_set), sorted(set_labels_annotator1))
+                        # cohen_kappa_score_overall +=1
+                    cohen_kappa_score_overall+=cohen_kappa(sorted(list_labels_annotator1_shortlist_with_stub_label),sorted(list_labels_annotator2_shortlist_with_stub_label))
+
+        else:
+            #so the email hash doesnt exist. i.e this is the first time we are seeing this email. add the annotations of second annotator to it
+            labels_annotator2=[]
+            #find the list of labels annotated by this guy- which has label_stub
+            #todo_ dont go back and retrieve it from intersecting_annotations
+            #note: here we just call the first hash_annotator_id as annotator2, while the if will have annotator_1 
+            for each_annotation in intersecting_annotations[hash_annotator_id]:
+                labels_annotator2.append(each_annotation["label"])
+            count_labels_annotated_by_annotator2 += len(labels_annotator2)
+            list_labels_annotator2_shortlist_with_stub_label=get_label_stub_labels_only(label_stub, labels_annotator2)
+            # no more set businesslabels_annotator2_set=set(labels_annotator2)
+            #email_hash_labels_annotator[email_hash]=labels_annotator2_set
+            email_hash_labels_annotator[email_hash] =list_labels_annotator2_shortlist_with_stub_label
 
 
 if len(intersecting_annotations.keys())==0:
     print("no common emails annotated between the given annotators")
 else:
-    percentage_v1=count_labels_intersection/labels_per_email
-    percentage_v2=cumulative_of_per_email_agreement/count_emails_both
-    count_emails_both_annotated=len(email_hash_labels_annotator1)
-
-
-    print(f"total labels_per_email:{labels_per_email}")
-    print(f"count_labels_intersection:{count_labels_intersection}")
-    print(f"{percentage_v1},")
-    print(f"cumulative_of_per_email_agreement:{cumulative_of_per_email_agreement}")
-    print(f"count_emails_both:{count_emails_both}")
-    print(f"{percentage_v2},")
+    # percentage_v1=count_labels_intersection/labels_per_email
+    # percentage_v2=cumulative_of_per_email_agreement/count_emails_both
+    # count_emails_both_annotated=len(email_hash_labels_annotator)
+    #
+    #
+    # print(f"total labels_per_email:{labels_per_email}")
+    # print(f"count_labels_intersection:{count_labels_intersection}")
+    # print(f"{percentage_v1},")
+    # print(f"cumulative_of_per_email_agreement:{cumulative_of_per_email_agreement}")
+    # print(f"count_emails_both:{count_emails_both}")
+    # print(f"{percentage_v2},")
     print(f"average kappa cohen score={cohen_kappa_score_overall/count_emails_both},")
 
 
