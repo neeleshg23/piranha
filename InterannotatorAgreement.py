@@ -12,7 +12,7 @@ annotators_annotations = {}
 annotator1Idx = 0
 annotator2Idx = 0
 annotator1_name="uma"
-annotator2_name="neel"
+annotator2_name="zoe"
 #what kind of label would you like to know more inter annotator details about [message,sentence, token]
 label_stub="message"
 
@@ -43,7 +43,7 @@ print(f" Analysis of  {label_stub} level labels annotations between {annotator2_
 #laptop
 
 
-with open("/Users/mithunpaul/research_code/isi/annotated_data/annotated_enron_retreived_using534_annotations_sep20th2022.jsonl", 'r') as f:
+with open("/Users/mithunpaul/research_code/isi/annotated_data/ta3_reloading_oct18th_message_level_annotated_3annotators_oct26th_extraction.jsonl", 'r') as f:
 
 #server
 #with open("/Users/mitch/research/piranha/annotated_datasets/ta3_reloading_oct18th_message_level_annotated_3annotators_oct26th_extraction.jsonl", 'r') as f:
@@ -69,10 +69,10 @@ with open("/Users/mithunpaul/research_code/isi/annotated_data/annotated_enron_re
                 elif  annotator2_name in entry['_annotator_id'] :
                     annotators_annotations[annotator2_name+"_"+str(email_hash)] = entry['spans']
                     annotator2Idx += 1
-#
-# for hash,text in (emails.items()):
-#     print(f"hash:{hash}\ntext:{text}\n****************************")
-#     print("\n")
+if (flag_print_hashes_text_emails==True):
+    for hash,text in (emails.items()):
+            print(f"hash:{hash}\ntext:{text}\n****************************")
+            print("\n")
 
 
 
