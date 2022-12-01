@@ -11,8 +11,8 @@ emails = {}
 annotators_annotations = {}
 annotator1Idx = 0
 annotator2Idx = 0
-annotator1_name="uma"
-annotator2_name="zoe"
+annotator1_name="-uma"
+annotator2_name="mithun"
 #what kind of label would you like to know more inter annotator details about [message,sentence, token]
 label_stub="message"
 
@@ -43,13 +43,13 @@ print(f" Analysis of  {label_stub} level labels annotations between {annotator2_
 #laptop
 
 
-with open("/Users/mithunpaul/research_code/isi/annotated_data/ta3_reloading_oct18th_message_level_annotated_3annotators_oct26th_extraction.jsonl", 'r') as f:
+with open("/Users/mitch/research/piranha/annotated_datasets/uma_remove_message_contact_asking_ta3_reloading_oct18th_message_level_annotated_3annotators_oct26th_extraction_with_mithun.jsonl", 'r') as f:
 
 #server
 #with open("/Users/mitch/research/piranha/annotated_datasets/ta3_reloading_oct18th_message_level_annotated_3annotators_oct26th_extraction.jsonl", 'r') as f:
 
     Lines = f.readlines()
-    for line in Lines:
+    for index,line in enumerate(Lines):
         entry = json.loads(line)
         email_hash = entry['_input_hash']
         if email_hash == int("1767252249"):
@@ -59,7 +59,8 @@ with open("/Users/mithunpaul/research_code/isi/annotated_data/ta3_reloading_oct1
         else:
             emailAnnotatorsCount[email_hash] = 1
         emails[email_hash] = entry['text']
-
+        if index>471:
+            pass
         if 'spans' in entry:
             if "_annotator_id" in entry:
 
